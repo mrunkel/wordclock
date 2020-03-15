@@ -1,22 +1,6 @@
 # CRAFT ENVIRONMENT
 .env
 
-# COMPOSER
-/vendor
-
-# CRAFT STORAGE
-/craft/storage/*
-/storage/*
-
-# ASSETS
-/public/assets/*
-/web/assets/css/main*.css
-/web/assets/js/main*.js
-
-# IMAGER TRANSFORMS
-/public/imager/*
-/web/imager/*
-
 # BUILD FILES
 /bower_components/*
 /node_modules/*
@@ -42,6 +26,3 @@
 config.codekit3
 prepros-6.config
 /backups/
-
-/testdata
-/dbdumps
