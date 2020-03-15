@@ -51,12 +51,13 @@ function zuText(value) {
 function formatTimeUS(UTC) {
   const us = UTC.clone().tz('America/Los_Angeles');
   let hour = us.hours();
-  let pm = '';
+  let pm = ' a.m.';
   if (hour > 12) {
     hour -= 12;
     pm = ' p.m.';
   }
-  toHour = hour + 1;
+  let toHour = hour + 1;
+  let toPM = '';
   if (toHour > 12) {
     toHour -= 12;
     toPM = ' p.m.';
@@ -81,7 +82,7 @@ function formatTimeUS(UTC) {
   }
 
   if (minute > 50) {
-    return 'It is ' + toWords(60 - minute) + ' to ' + toWords(toHour) + toPM;
+    return 'It is ' + toWords(60 - minute) + ' before ' + toWords(toHour) + toPM;
   }
 
   return 'It is ' + toWords(hour) + ' ' + toWords(minute) + pm;
@@ -97,23 +98,23 @@ function formatTimeGermany(UTC) {
     toHour = 0;
   }
   if (minute === 0) {
-    return 'Es ist ' + zuText(hour);
+    return 'Es ist ' + zuText(hour) + ' Uhr';
   }
 
   if (minute === 15) {
-    return 'Es ist virtel nach ' + zuText(hour);
+    return 'Es ist virtel nach ' + zuText(hour) + ' Uhr';
   }
 
   if (minute === 45) {
-    return 'Es ist virtel vor ' + zuText(toHour);
+    return 'Es ist virtel vor ' + zuText(toHour) + ' Uhr';
   }
 
   if (minute < 10) {
-    return 'Es ist ' + zuText(minute) + ' nach ' + zuText(hour);
+    return 'Es ist ' + zuText(minute) + ' nach ' + zuText(hour) + ' Uhr';
   }
 
   if (minute > 50) {
-    return 'Es ist ' + zuText(60 - minute) + ' vor ' + zuText(toHour);
+    return 'Es ist ' + zuText(60 - minute) + ' vor ' + zuText(toHour) + ' Uhr';
   }
 
   return 'Es ist ' + zuText(hour) + ' Uhr ' + zuText(minute);
@@ -125,8 +126,8 @@ function updateClock() {
   const germanClock = document.getElementById('clock-german');
   const UTC = new moment();
 
-  usClock.innerText = formatTimeUS(UTC);
-  germanClock.innerText = formatTimeGermany(UTC);
+  usClock.innerText = formatTimeUS(UTC) + ' in California';
+  germanClock.innerText = formatTimeGermany(UTC) + ' in Deutschland';
 }
 
 function initClock() {
