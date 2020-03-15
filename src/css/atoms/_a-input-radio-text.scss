@@ -1,0 +1,144 @@
+// @Author: Michael Neumair <mBook>
+// @Date:   2016-08-15T17:13:48+02:00
+// @Email:  7q7w7e7r@gmail.com
+// @Last modified by:   mBook
+// @Last modified time: 2016-10-05T10:17:39+02:00
+
+// @import './../../../configs/scss/vars';
+// @import './../../../configs/scss/media-queries';
+
+$a-input-radio-text-config: (
+    checkbox-width: 40px,
+    min-height: 38px
+);
+
+.a-input-radio-text {
+    position: relative;
+    min-height: map-get($a-input-radio-text-config, min-height);
+    border-radius: 30px;
+
+    // onActive
+    &:active {
+        opacity: .8;
+        transition: opacity .05s ease-in;
+    }
+
+    // input is checked
+    &.checked {
+        box-shadow: none;
+    }
+
+    // input is disabled
+    &.error {
+        .a-input-radio-text__label {
+            &::before {
+                border: $border-form-error;
+                box-shadow: $error-shadow;
+            }
+
+            &::after {
+                background-color: red;
+            }
+        }
+    }
+
+    // input is disabled
+    &.disabled {
+        opacity: .6;
+        box-shadow: none;
+        cursor: auto;
+        filter: grayscale(90%);
+    }
+}
+
+    .a-input-radio-text__input {
+        // 1. we hide the radiobutton
+        opacity: .01;
+		height: 1px;
+        width: 1px;
+		position: absolute;
+
+        // 2. show fake checkbox when active
+        &:checked + .a-input-radio-text__label {
+             &::after {
+                 transition: opacity, .3s ease-in-out;
+                 opacity: 1;
+             }
+         }
+
+         &:focus + .a-input-radio-text__label {
+             &:before {
+                 transition: box-shadow .5s $ease-out-cubic;
+                 box-shadow: 0 0 4px $c-second;
+                 border-radius: 50%;
+             }
+         }
+    }
+
+    .a-input-radio-text__label {
+        height: 100%;
+        padding-left: map-get($a-input-radio-text-config, checkbox-width);
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        cursor: pointer;
+        min-height: map-get($a-input-radio-text-config, min-height);
+
+        &::before {
+            box-sizing: border-box;
+            background-color: #f8f8f8;
+            content: '';
+            opacity: 1;
+            border: $border-form;
+            position: absolute;
+            border-radius: 50%;
+            display: inline-block;
+            margin-left: -13px;
+            margin-top: -13px;
+            width: 26px;
+            height: 26px;
+            top: 50%;
+            left: map-get($a-input-radio-text-config, checkbox-width) / 2 - 2;
+            transition: border-color .15s  ease-in-out;
+        }
+
+        // onHover
+        &:hover {
+            &::before {
+                border-color: #cbc7c7;
+                transition: border-color .2s  ease-in-out;
+            }
+        }
+
+        &::after {
+            box-sizing: border-box;
+            content: '';
+            background: $c-second;
+            border-radius: 18px;
+            position: absolute;
+            display: inline-block;
+            margin-left: -8px;
+            margin-top: -8px;
+            width: 16px;
+            height: 16px;
+            top: 50%;
+            left: map-get($a-input-radio-text-config, checkbox-width) / 2 - 2;
+            opacity: 0;
+            transition: opacity, .4s ease-in-out;
+        }
+    }
+
+    .a-input-radio-text__text {
+        padding: 4px 0;
+    	font-style: italic;
+    	line-height: 1.4;
+    	color: $c-grey;
+        margin: 0;
+    }
+
+@include media-breakpoint-down("md") {
+    .a-input-radio-text__text {
+    }
+}
+

@@ -1,0 +1,201 @@
+.o-onepager-body {
+    .m-awards {
+        border-right: 1px solid $c-bg-dark;
+
+        .a-media {
+            max-height: 135px;
+        }
+    }
+
+    .m-awards img {
+        transform: scale(.7);
+        transition: transform .6s;
+    }
+
+    .m-awards img:hover {
+        cursor: zoom-in;
+        cursor: -moz-zoom-in;
+        cursor: -webkit-zoom-in;
+        transform: scale(.9);
+    }
+
+
+    .m-awards-content {
+        .a-heading {
+            margin: 20px 0;
+        }
+    }
+
+    .m-list-ekomistars {
+        margin-top: 35px;
+
+        .a-symbol-ekomistar {
+            width: 25px;
+            margin-left: 3px;
+        }
+
+        .a-paragraph {
+            b {
+                font-size: 1.4em;
+                font-weight: 300;
+                margin-left: 15px;
+            }
+        }
+    }
+
+    .a-ekomi-icon {
+        margin-top: 17px;
+        padding-bottom: 0;
+    }
+}
+
+
+@include media-breakpoint-down("sm") {
+    .o-onepager-body {
+        .m-awards-content {
+            .m-awards {
+                border-right: unset;
+                border-bottom: 1px solid $c-bg-dark;
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+
+                .a-media {
+                    max-height: 100px;
+                }
+            }
+
+            .m-awards img {
+                transform: scale(.7);
+                transition: transform .6s;
+            }
+
+
+            .m-awards img:hover {
+                cursor: zoom-in;
+                cursor: -moz-zoom-in;
+                cursor: -webkit-zoom-in;
+                transform: scale(.9);
+            }
+
+
+            .m-list-ekomistars {
+                margin-top: 20px;
+
+                .a-symbol-ekomistar {
+                    width: 15px;
+                    margin-left: 0;
+                }
+
+                .a-paragraph {
+                    b {
+                        font-size: 1em;
+                    }
+                }
+            }
+
+            .a-ekomi-icon {
+                max-width: 75px;
+                margin-top: 5px;
+            }
+
+        }
+    }
+}
+
+.o-lemonade-trust {
+    .a-media {
+        max-width: 100px;
+        filter: grayscale(100%);
+        opacity: 0.6;
+    }
+
+    .a-symbol-ekomistar {
+        max-width: 100px;
+        filter: grayscale(100%);
+        opacity: 0.6;
+    }
+}
+
+// AAK Landingpage
+
+.o-main-aak {
+    .o-onepager-body {
+        .m-awards-content {
+            .m-awards-border {
+                border-right: 1px solid $c-text-second;
+            }
+            .a-awards-headline {
+                font-size: $fs-xl;
+                font-weight: $fw-thin;
+            }
+
+            .a-ekomi-icon {
+            }
+            .m-list-ekomistars {
+                .a-paragraph {
+                    b {
+                        margin-left: 0;
+                        margin-right: 5px;
+                        font-size: 1em;
+                        font-weight: $fw-medium;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down("sm") {
+    .o-main-aak {
+        .o-onepager-body {
+            .m-awards-content {
+                .m-awards-border {
+                    border-right: none;
+                }
+                .a-awards-headline {
+                    font-weight: $fw-light;
+                    font-size: $fs-l;
+                }
+
+                .a-ekomi-icon {
+                }
+
+                .m-list-ekomistars {
+                    margin-top: 15px;
+
+                    span {
+                        font-size: $fs-l;
+                        font-weight: $fw-regular;
+                        margin-right: 10px;
+                    }
+                }
+
+                .a-paragraph {
+                    font-size: $fs-s;
+
+                    span {
+                        font-weight: $fw-regular;
+                    }
+                }
+
+                .m-awards {
+                    border-left: unset;
+                    border-top: 1px solid #b7b7b7;
+                    margin: 20px 0 0;
+                    padding: 20px 0 0;
+
+                    .vertical-center {
+                        .a-media {
+                            min-height: 50px;
+                            max-width: 200px;
+
+                            &:first-child {
+                                max-width: 100px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

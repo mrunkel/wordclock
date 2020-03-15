@@ -1,0 +1,29 @@
+version: '3.5'
+services:
+  app:
+    image: mrunkel/wordclock
+    build: .
+    networks:
+      - web
+    volumes:
+      - ./web:/usr/share/nginx/html:delegated
+    ports:
+      - 8887:80
+  buildchain:
+    image: dock.pfdev.de/public/craft-build
+    networks:
+      - web
+    ports:
+      - 4010:4010
+      - 4011:4011
+    volumes:
+      - ./package.json:/project/package.json
+      - ./src:/project/src
+      - ./web:/project/web
+      # expose the external gulpfile in the container for testing changes
+      - ./gulpfile.js:/project/gulpfile.js:ro
+    command: ['./node_modules/.bin/gulp', 'watch']
+networks:
+  web: # defines the network used to connect to traefik in another container
+    external:
+      name: web

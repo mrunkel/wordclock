@@ -1,0 +1,115 @@
+//@Author: Raffael Pace <mBook>
+//@Date:   2017-18-01T12:13:51+01:00
+//@Email:  raffael.pace@kautionsfrei.de
+//@Last modified by:   mBook
+//@Last modified time: 2017-18-01T12:13:51+01:00
+
+//== Fonts
+//
+
+//hello
+
+//** font families
+$ff-opensans: 	   'Helvetica Neue', sans-serif,;
+$ff-fallback: 	   arial, helvetica;
+$ff-glyphicons:    'Glyphicons Regular';
+
+//** font families for whom
+$ff-first: $ff-opensans;
+$ff-second: $ff-fallback;
+
+
+//** font-sizes root value 16px
+$fs-xs: 			0.75em; 			// 12px
+$fs-s: 				0.875em;			// 14px
+$fs-m: 				1em;				// 16px
+$fs-l:				1.125em;			// 18px
+$fs-xl: 			1.25em;				// 20px
+$fs-xxl: 			1.5em;				// 24px
+
+$fs-heading-xxs: 	1.125em;			// 18px
+$fs-heading-xs: 	1.75em;				// 28px
+$fs-heading-s: 		2em;				// 32px
+$fs-heading-m: 		2.25em;				// 36px
+$fs-heading-l: 		2.625em;			// 42px
+$fs-heading-xl: 	3em;				// 48px
+$fs-heading-xxl: 	3.125em;			// 50px
+
+//** font-weights
+$fw-thin:           100;
+$fw-lighter:        200;
+$fw-light: 			300;
+$fw-regular: 		400;
+$fw-medium:         500;
+$fw-semibold:       600;
+$fw-bold: 			700;
+$fw-extra-bold: 	800;
+
+
+//** line-height
+$lh-small: 			.9;
+$lh-flat:			1.1;
+$lh-small: 			1.2;
+$lh-normal:			1.3;
+$lh: 				1.5; // DEPRECIATED, use lh-normal instead!
+$lh-big: 			1.5;
+$lh-huge: 			1.9;
+
+
+
+//== Fonts END
+//
+
+
+//**  img url
+
+$BG-Logo: url("/images/system/aak-logo.png");
+$BG-Logo-Inverse: url("/images/system/logo-white.png");
+$url-img: "/assets/images/";
+
+//** colors
+
+$c-white:       #ffffff !default;
+$c-grey:        #898989 !default;
+$c-black:       #000000 !default;
+
+$c-main:        #002A5F !default; //** AAK blue
+$c-main-dark:   #002A5F;
+$c-second:      #002A5F !default; //** AAK blue
+
+$c-link:        #002A5F;
+$c-link-hover:  #002A5F;
+$c-cross-reference: #002A5F;
+
+$c-header-bg: #ffffff !default;
+$c-footer-bg: #4A4A4A !default;
+
+$c-text-main:   #000000 !default; //** headlines etc.
+$c-text-second: #4A4A4A !default; //** texts, paragraphs, etc.
+$c-bg-dark:     #F9F9F9 !default;
+$c-bg-light:    #F9F9F9 !default;
+$c-bg-blue:     rgba(222,231,247,0.25);
+
+$c-error:       #D0021B;
+
+//** opacity background colors
+$c-opacity-full:    1.0;
+$c-opacity-half:    0.5;
+
+
+//** border radius
+
+$btn-radius-normal: 100px !default;
+$border-form-error: 1px solid $c-error;
+$border-form: 1px solid #002A5F;
+
+
+
+//== Shadows
+$text-shadow-strong: 0 0 3px rgba(0,0,0,0.88);
+$error-shadow: 	inset 0 0 10px rgba(232,84,84,0.35);
+
+
+//== easings
+// see more: http://easings.net/
+$ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);

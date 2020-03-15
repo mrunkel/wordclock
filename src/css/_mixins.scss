@@ -1,0 +1,28 @@
+//@Author: Raffael Pace <mBook>
+//@Date:   2017-18-01T12:13:51+01:00
+//@Email:  raffael.pace@kautionsfrei.de
+//@Last modified by:   mBook
+//@Last modified time: 2017-18-01T12:13:51+01:00
+
+// TODO cleanup these mixins they aren't needed as we have
+// 'autoprefixer' in all (webpack.config.common.js)
+
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+  -webkit-box-shadow:$top $left $blur $color #{$inset};
+  -moz-box-shadow:$top $left $blur $color #{$inset};
+  box-shadow:$top $left $blur $color #{$inset};
+}
+@mixin transform-translate($TopBottom, $RightLeft) {
+  -webkit-transform: translate($TopBottom, $RightLeft);
+  -moz-transform: translate($TopBottom, $RightLeft);
+  -ms-transform: translate($TopBottom, $RightLeft);
+  -o-transform: translate($TopBottom, $RightLeft);
+  transform: translate($TopBottom, $RightLeft);
+}
+@mixin transform-rotate($deg) {
+	-moz-transform: rotate($deg);
+	-ms-transform: rotate($deg);
+	-o-transform: rotate($deg);
+	-webkit-transform: rotate($deg);
+	transform: rotate($deg);
+}

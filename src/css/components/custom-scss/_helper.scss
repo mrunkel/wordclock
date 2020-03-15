@@ -1,0 +1,287 @@
+//@Author: Raffael Pace <mBook>
+//@Date:   2017-24-01T12:15:09+01:00
+//@Email:  raffael.pace@kautionsfrei.de
+//@Last modified by:   mBook
+//@Last modified time: 2017-24-01T12:15:09+01:00
+
+.float-right{ // font-awesome uses the helper pull-right
+	float: right;
+}
+.float-left { // font-awesome uses the helper pull-left
+	float: left;
+}
+.text-inverse{
+	color: $c-white;
+	&:hover{
+	color: $c-bg-light;
+	}
+}
+.o-header-new {
+	.text-inverse {
+		color: $c-text-main;
+	}
+}
+
+.zero-padding{
+	padding: 0 !important;
+}
+.horizontal-center{
+	position: absolute;
+    top: 50%;
+    @include transform-translate(0%, -50%);
+}
+.vertical-align{
+    flex-direction: column;
+    display: flex;
+}
+.box-shadow{
+	@include box-shadow(0, 7px, 10px, -3px rgba(48, 48, 48, 0.7));
+}
+.vertical-align-center{
+    flex-direction: unset !important;
+}
+
+.vertical-center {
+	display: flex;
+	align-items: center;
+}
+
+.middle{
+	flex-grow: 1;
+	text-align: center;
+	position: relative;
+}
+
+.middle-left {
+	flex-grow: 1;
+	text-align: left;
+	position: relative;
+}
+
+.middle-right {
+	flex-grow: 1;
+	text-align: right;
+	position: relative;
+}
+
+.bottom-left {
+	text-align: left;
+}
+
+.bottom-right {
+	text-align: right;
+}
+
+/* dotted Tipp box style */
+
+.m-box-dotted .middle {
+	text-align: left;
+}
+/* dotted Tipp box style END */
+
+.center{
+    align-self: center;
+    width: 100%;
+}
+.top, .bottom{
+	width: 100%;
+}
+.align-left{
+	text-align: left !important;
+}
+.align-right{
+	text-align: right !important;
+}
+.align-center{
+	text-align: center !important;
+}
+.adapting-height {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+/*br {
+	display: block;
+    content: "";
+    padding: 0;
+    &:nth-child(1){
+    	+ br{
+		padding-bottom: 15px;
+    	}
+    }
+
+}*/
+// reset lists
+ul, ol, dl {
+	margin: 0;
+	padding: 0;
+}
+
+.unstyled-list{
+	list-style-type: none;
+}
+
+.hidden{
+	display: none;
+}
+
+// font-sizes
+.fs-xs{
+	font-size: $fs-xs !important;
+}
+.fs-s{
+	font-size: $fs-s !important;
+}
+.fs-m{
+	font-size: $fs-m !important;
+}
+.fs-l{
+	font-size: $fs-l !important;
+}
+.fs-xl{
+	font-size: $fs-xl !important;
+}
+.fs-xxl{
+	font-size: $fs-xxl !important;
+}
+@include media-breakpoint-down("lg") {
+	.hidden-lg{
+		display: none;
+	}
+// font-sizes
+	.lg-fs-xs{
+		font-size: $fs-xs;
+	}
+	.lg-fs-s{
+		font-size: $fs-s;
+	}
+	.lg-fs-m{
+		font-size: $fs-m;
+	}
+	.lg-fs-l{
+		font-size: $fs-l;
+	}
+	.lg-fs-xl{
+		font-size: $fs-xl;
+	}
+	.lg-fs-xxl{
+		font-size: $fs-xxl;
+	}
+}
+@include media-breakpoint-down("md") {
+	.hidden-md{
+		display: none !important;
+	}
+// font-sizes
+	.md-fs-xs{
+		font-size: $fs-xs;
+	}
+	.md-fs-s{
+		font-size: $fs-s;
+	}
+	.md-fs-m{
+		font-size: $fs-m;
+	}
+	.md-fs-l{
+		font-size: $fs-l;
+	}
+	.md-fs-xl{
+		font-size: $fs-xl;
+	}
+	.md-fs-xxl{
+		font-size: $fs-xxl;
+	}
+}
+@include media-breakpoint-down("sm") {
+	.hidden-sm{
+		display: none !important;
+	}
+// font-sizes
+	.sm-fs-xs{
+		font-size: $fs-xs;
+	}
+	.sm-fs-s{
+		font-size: $fs-s;
+	}
+	.sm-fs-m{
+		font-size: $fs-m;
+	}
+	.sm-fs-l{
+		font-size: $fs-l;
+	}
+	.sm-fs-xl{
+		font-size: $fs-xl;
+	}
+	.sm-fs-xxl{
+		font-size: $fs-xxl;
+	}
+}
+
+@include media-breakpoint-down("xs") {
+	.hidden-xs{
+		display: none;
+	}
+	// font-sizes
+	.xs-fs-xs{
+		font-size: $fs-xs;
+	}
+	.xs-fs-s{
+		font-size: $fs-s;
+	}
+	.xs-fs-m{
+		font-size: $fs-m;
+	}
+	.xs-fs-l{
+		font-size: $fs-l;
+	}
+	.xs-fs-xl{
+		font-size: $fs-xl;
+	}
+	.xs-fs-xxl{
+		font-size: $fs-xxl;
+	}
+}
+
+@include media-breakpoint-down('md') {
+	.hidden-module-mb {
+		display: none;
+	}
+}
+
+@include media-breakpoint-only('md') {
+	.hidden-module-tb {
+		display: none;
+	}
+}
+
+@include media-breakpoint-up('lg') {
+	.hidden-module-dt {
+		display: none;
+	}
+}
+
+//hides content higher than 768px (content visible only for mobile)
+
+@media (min-width:768px) {
+	.hidden-desktop {
+		display: none !important;
+	}
+}
+
+//hides content higher than 992px (content visible for ipad and mobile)
+
+@media (min-width: 992px) {
+	.hidden-lg-desktop {
+		display:none !important;
+	}
+}
+
+@media  (min-width: 200px) and (max-width: 767px) {
+	.hidden-mobile {
+		display: none;
+	}
+}

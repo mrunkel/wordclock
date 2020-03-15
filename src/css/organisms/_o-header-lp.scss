@@ -1,0 +1,209 @@
+.o-header-lp {
+    background-image: url("/assets/images/video-stage-img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height:700px;
+    .m-header-lp {
+        height: 100px;
+        background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);
+        padding-top: 30px;
+
+        .a-hotline {
+            font-size: $fs-xs;
+            margin-top: -35px;
+        }
+
+        .a-nav-brand {
+            background-image: none;
+            height: 60px;
+            width: auto;
+            margin-top: -16px;
+            display: block;
+        }
+    }
+    .m-stage-lp {
+        padding-top:150px;
+        padding-bottom:100px;
+        .m-stage-lp-headline {
+            .a-heading {
+                font-size: 3em;
+                font-weight: bold;
+                color: $c-white;
+            }
+            .a-paragraph {
+                font-size: 2em;
+                text-align: center;
+                font-weight: italic;
+                color: $c-white;
+            }
+        }
+        .m-stage-lp-layer {
+            background: $c-white;
+            padding:30px;
+            border-radius: 3px;
+            .a-heading {
+                margin-bottom:10px;
+            }
+            .a-paragraph {
+                font-weight:400;
+            }
+            ul {
+                margin: 10px;
+                .a-listitem {
+                    margin-top: 10px;
+                }
+            }
+            .a-btn {
+                margin-top: 20px;
+            }
+        }
+    }
+    .o-calc-section {
+        .m-box-inner {
+            border-radius: 5px;
+            .m-calc-content {
+                .m-calc-display-horizontal {
+                    .m-info-text {
+                        position: absolute;
+                        top: 170%;
+                        .a-paragraph {
+                            color: $c-white;
+                        }
+
+                    }
+                }
+                .m-calc-alert {
+                    margin-top:10px;
+                }
+            }
+        }
+    }
+}
+
+
+@include media-breakpoint-down('md') {
+    .o-header-lp {
+        .m-stage-lp {
+            padding-top:150px;
+            padding-bottom:50px;
+            .m-stage-lp-headline {
+                .a-heading {
+                    font-size:2em;
+                }
+                .a-paragraph {
+                    font-size:1em;
+                }
+            }
+            .m-stage-lp-layer {
+                .a-heading {
+                    margin-bottom:10px;
+                }
+                .a-paragraph {
+                    font-weight:400;
+                }
+                ul {
+                    margin: 10px;
+                    .a-listitem {
+                        margin-top: 0;
+                    }
+                }
+                .a-btn {
+                    margin-top: 20px;
+                }
+            }
+        }
+        .o-calc-section {
+            .m-box-inner {
+                .m-calc-content {
+                    .m-calc-display-horizontal {
+                        .m-info-text {
+                            position: relative!important;
+                            .a-paragraph {
+                                color: $c-text-main;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down('sm') {
+    .o-header-lp {
+        background-image: url("/assets/images/videocampaign-stage-sm.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        .m-stage-lp {
+            padding-top:30px;
+            padding-bottom:0px;
+            .m-stage-lp-headline {
+                .a-heading {
+                    font-size:2em;
+                }
+                .a-paragraph {
+                    font-size:1em;
+                }
+            }
+            .m-stage-lp-layer {
+                margin-top:30px;
+            }
+        }
+        .o-calc-section {
+            margin-top: 20px;
+            .m-box-inner {
+                .m-calc-content {
+                    .m-calc-display-horizontal {
+                        .m-info-text {
+                            position: relative!important;
+
+                            .a-paragraph {
+                                color: $c-text-main;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:320px) and (max-width:575px) {
+    .o-header-lp {
+        background-image: url("/assets/images/videocampaign-stage-sm.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 0 40px;
+        background-color:$c-bg-light;
+        min-height:650px;
+        .m-header-lp {
+            padding-top: 10px;
+            background: linear-gradient(to bottom, black 50%, rgba(0, 0, 0, 0) 100%);
+            .a-nav-brand {
+                margin-top:20px;
+                height: 50px;
+            }
+            .a-hotline {
+                margin-top: 0;
+            }
+        }
+        .m-stage-lp {
+            .m-stage-lp-headline {
+                .a-heading {
+
+                }
+            }
+            .m-stage-lp-layer {
+                margin-top:30px;
+            }
+        }
+    }
+    header {
+        o-header-lp2 {
+            min-height:550px;
+        }
+    }
+}
+

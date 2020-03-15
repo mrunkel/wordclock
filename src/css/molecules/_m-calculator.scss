@@ -1,0 +1,347 @@
+//@Author: Raffael Pace <mBook>
+//@Date:   2017-26-01T12:09:07+01:00
+//@Email:  raffael.pace@kautionsfrei.de
+//@Last modified by:   mBook
+//@Last modified time: 2017-26-01T12:09:07+01:00
+
+// calculator slider element
+.ui-slider .ui-slider-handle {
+    border: 1px solid $c-white !important;
+    background-color: $c-main !important;
+    width: 1.4em !important;
+    height: 1.4em !important;
+    border-radius: 50%;
+    z-index: 4 !important;
+    box-shadow: 0.5px 0.5px 2px 1px rgba(0, 0, 0, .32);
+    outline-width: 0;
+}
+
+.m-slider-line-holder {
+    margin-top: 15px;
+}
+
+.m-slider-line-holder .ui-slider {
+    position: relative;
+    display: block;
+    border-radius: 15px;
+    background-color: $c-white !important;
+    border: 2px solid $c-main;
+    height: 15px !important;
+}
+
+.m-slider-line-holder .ui-slider-range-min {
+    background-color: $c-main;
+}
+
+// calculator alert
+
+.m-calc-content .m-calc-alert {
+    background-color: #e85454;
+
+    p {
+        color: $c-white;
+        padding: 20px 6px 5px;
+        font-size: 10px
+    }
+}
+
+.m-calc-content .m-calc-no-padding {
+    padding-left: 0;
+}
+
+//Basic horizontal calculator
+
+.m-calc-display-horizontal {
+    background: none;
+    margin: unset;
+    padding: 5px 20px 5px;
+    position: relative;
+
+    .a-paragraph {
+        color: $c-text-main;
+        margin-top: 15px !important;
+        margin-bottom: unset !important;
+    }
+
+    .a-heading {
+        color: $c-main;
+        margin-top: 11px;
+        margin-left: -10px;
+        text-align: right;
+        font-weight: $fw-bold;
+    }
+
+    input {
+        text-align: center;
+        padding: 8px 0;
+        color: $c-main;
+        font-size: 1.5em;
+        max-width: 100%;
+        box-shadow: inset 0 0 15px #ccc;
+        border: 1px solid #ddd;
+    }
+
+    .m-info-text {
+        position: absolute;
+        top: 115%;
+    }
+
+    .a-btn {
+        padding: 10px 28px;
+        margin-top: 6px;
+    }
+}
+
+@include media-breakpoint-down("md") {
+    .m-calc-display-horizontal {
+        .m-calc-no-padding {
+            .a-paragraph {
+                text-align: left;
+            }
+        }
+
+        .m-info-text {
+            top: 105%;
+        }
+    }
+}
+
+@include media-breakpoint-down("sm") {
+    .m-calc-display-horizontal {
+        .a-heading {
+            text-align: right;
+        }
+
+        .m-calc-no-padding {
+            .a-paragraph {
+                margin-top: unset;
+            }
+        }
+    }
+}
+
+// style sticky calculator
+
+.m-sticky-calc {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 51;
+    width: 100%;
+
+    .m-circle {
+        background: white;
+
+        .m-circle__headline {
+            background: $c-main;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 0 7px -1px rgba(48, 48, 48, .3);
+            border-bottom: 1px solid #f4f4f4;
+            margin-bottom: -10px;
+
+            .a-heading {
+                color: $c-white;
+            }
+        }
+
+        .calc-popup {
+            padding: 10px 20px;
+            box-shadow: 0 0 7px -1px rgba(48, 48, 48, .3);
+            border-radius: 0px 0 5px 5px;
+            background: $c-white;
+
+            .m-box-inner {
+                box-shadow: unset;
+
+                .m-calc-content {
+                    .m-calc-display-horizontal {
+                        background: none;
+                        margin: unset;
+                        padding: 0px 20px 5px;
+
+                        .a-paragraph {
+                            font-weight: 300;
+                            color: #999;
+                            margin-top: 12px;
+                        }
+
+                        input {
+                            text-align: center;
+                            padding: 8px 0;
+                            color: $c-main;
+                            font-size: 1.75em;
+                            max-width: 100%;
+                            box-shadow: inset 0 0 15px #ccc;
+                            border: 1px solid #ddd;
+                        }
+
+                        .a-heading {
+                            color: $c-main;
+                            margin-top: 6px;
+                            text-align: right;
+                        }
+
+                        .m-calc-no-padding {
+                            .a-paragraph {
+                                text-align: left;
+                                margin-top: 10px;
+                            }
+                        }
+
+                        .m-info-text {
+                            position: relative !important;
+                        }
+                    }
+                }
+            }
+
+            .m-box-grey {
+                margin-bottom: 40px;
+
+                .m-image {
+                    .a-media {
+                        max-width: 75px;
+                        padding-bottom: 0px;
+                    }
+                }
+
+                .m-list-ekomistars {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    padding-top: 10px;
+                }
+
+                .a-paragraph {
+                    text-align: left;
+                }
+            }
+        }
+
+        .fa-angle-down {
+            font-size: 45px;
+            background: $c-main;
+            width: 50px;
+            height: 50px;
+            border: 2px solid;
+            border-radius: 100px;
+            color: $c-white;
+            box-shadow: 0 0 7px -1px rgba(48, 48, 48, .3);
+            left: 48.5%;
+            position: absolute;
+            top: 95%;
+            z-index: 52;
+            text-align: center;
+        }
+
+        .fa-angle-up {
+            font-size: 45px;
+            background: $c-white;
+            width: 50px;
+            height: 50px;
+            border: 2px solid;
+            border-radius: 100px;
+            color: $c-main;
+            box-shadow: 0 0 7px -1px rgba(48, 48, 48, .3);
+            left: 48.5%;
+            position: absolute;
+            top: 95%;
+            z-index: 52;
+            text-align: center;
+        }
+    }
+}
+
+#sticky-calc-scroll {
+    display: none;
+}
+
+@include media-breakpoint-down('md') {
+    .m-sticky-calc {
+        .m-circle {
+            .fa-angle-down, .fa-angle-up {
+                left: 47%;
+            }
+
+            .calc-popup {
+                .m-box-grey {
+                    .m-list-ekomistars {
+                        display: inline-block;
+                    }
+                    .a-paragraph {
+                        text-align: center;
+                    }
+                }
+            }
+
+            .m-calc-popup {
+                .m-box-inner {
+                    .m-calc-content {
+                        .m-calc-display-horizontal {
+                            .m-info-text {
+                                position: relative !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .m-sticky-calc {
+        .m-circle {
+            .calc-popup {
+                .m-box-grey {
+                    .m-list-ekomistars {
+                        display: -webkit-box;
+                    }
+                    .a-paragraph {
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 320px) and (max-width: 575px) {
+    .m-sticky-calc {
+        .m-circle {
+            .fa-angle-down, .fa-angle-up {
+                left: 43%;
+            }
+
+            .m-calc-popup {
+                .m-box-inner {
+                    .m-calc-content {
+                        .m-calc-display-horizontal {
+                            .a-heading {
+                                text-align: center;
+                            }
+
+                            .m-calc-no-padding {
+                                .a-paragraph {
+                                    text-align: left;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Calculator inside kfx-banner-module with overlay function
+.o-kfx-banner-calc {
+    .o-section {
+        .o-box {
+            margin-top: -80px;
+        }
+    }
+}

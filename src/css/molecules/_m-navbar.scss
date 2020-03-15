@@ -1,0 +1,328 @@
+//@Author: Raffael Pace <mBook>
+//@Date:   2017-26-01T12:09:07+01:00
+//@Email:  raffael.pace@kautionsfrei.de
+//@Last modified by:   mBook
+//@Last modified time: 2017-26-01T12:09:07+01:00
+
+.m-navbar {
+    margin-top: 54px;
+
+    .m-navbar-first-level {
+        list-style: none;
+        position: relative;
+        float: left;
+        margin: 0;
+        padding: 0;
+        margin-top: 4px;
+
+        a {
+            display: block;
+            color: $c-text-main;
+            text-decoration: none;
+            font-weight: $fw-light;
+            line-height: 32px;
+            padding: 0 15px;
+        }
+
+        li {
+            position: relative;
+            float: left;
+            margin: 0;
+            padding: 0;
+            z-index: 1;
+
+            &.m-navbar-active {
+                border-top-left-radius: 4px;
+                border-top-right-radius: 4px;
+                background: $c-white;
+                margin-right: 5px;
+
+                a {
+                    color: $c-main;
+
+                }
+
+            }
+
+            &:hover {
+                background: $c-bg-light;
+
+                > .m-navbar-second-level {
+                    display: block;
+                    border-radius: 4px;
+                    border-top-left-radius: 0px;
+                    font-size: $fs-s;
+                    -webkit-box-shadow: 0px 0px 7px -1px rgba(48, 48, 48, 0.3);
+                    -moz-box-shadow: 0px 0px 7px -1px rgba(48, 48, 48, 0.3);
+                    box-shadow: 0px 0px 7px -1px rgba(48, 48, 48, 0.3);
+
+                    li {
+                        a {
+                            color: $c-grey;
+                            font-weight: $fw-regular;
+                        }
+                    }
+                }
+            }
+
+            &.m-navbar-inactive {
+                &:hover {
+                    border-top-left-radius: 4px;
+                    border-top-right-radius: 4px;
+
+                    a {
+                        color: $c-main-dark;
+                    }
+                }
+            }
+
+            &:last-child {
+                .m-navbar-second-level {
+                    li {
+                        width: 180px;
+                    }
+                }
+            }
+        }
+
+        .m-navbar-second-level {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: $c-white;
+            padding: 0;
+            list-style: none;
+            margin: 0;
+
+            li {
+                float: none;
+                width: 240px;
+
+                &.active {
+                    a {
+                        color: $c-main !important;
+                        font-weight: $fw-bold !important;
+                    }
+                }
+            }
+
+            a {
+                line-height: 120%;
+                padding: 10px 15px;
+            }
+
+            ul {
+                top: 0;
+                left: 100%;
+            }
+
+            &:last-child {
+                ul {
+                    left: -100%;
+                }
+            }
+        }
+    }
+}
+
+.o-header-new {
+    .m-navbar {
+        .m-navbar-first-level {
+            a {
+                color: $c-text-main;
+                font-weight: $fw-light;
+            }
+
+            li {
+                .m-navbar-active {
+                    color: $c-text-main;
+                }
+
+                &:hover {
+                    > .m-navbar-second-level {
+                        li {
+                            a {
+                                color: $c-text-main;
+                                font-weight: 300;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .m-navbar-dropdown {
+        #m-navbar-mobile {
+            ul {
+                ul {
+                    li {
+                        a {
+                            color: $c-grey;
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .a-navbar-mobile-trigger {
+        background: unset;
+    }
+
+}
+
+// aak landingpage start
+
+.o-header-aak {
+    .m-navbar {
+        margin-top: 58px;
+
+        .m-navbar-first-level {
+            margin-top: 0;
+
+            li {
+                &:hover {
+                    background: $c-bg-light;
+                }
+            }
+
+            a {
+                color: $c-text-main;
+                font-weight: $fw-light;
+            }
+
+            .a-link-oa {
+                color: $c-main-dark;
+                font-weight: $fw-bold;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down("md") {
+    .o-header-aak {
+        .a-navbar-mobile-trigger {
+            i {
+                font-size: $fs-xxl;
+            }
+        }
+
+        .m-navbar-dropdown {
+            background-color: $c-main-dark;
+            position: relative;
+            z-index: 1;
+
+            .col-12 {
+                border-top: 1px solid white; //to fix the blue line when the nav dropdown is closed
+            }
+
+            nav {
+                ul {
+                    padding-left: 0px;
+
+                    li {
+                        margin-left: -10px;
+                        padding-bottom: 5px;
+                        padding-top: 5px;
+                        border-bottom: 1px solid white;
+
+                        &:last-child {
+                            border-bottom: none;
+                        }
+
+                        a {
+                            color: $c-white;
+                            font-weight: $fw-light;
+                        }
+
+                        .a-link-oa {
+                            font-weight: $fw-semibold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up("lg") {
+    .o-header-aak {
+        .m-navbar-dropdown {
+            display: none;
+        }
+    }
+}
+
+
+#m-navbar-mobile .m-navbar-first-level {
+    display: none;
+}
+
+@include media-breakpoint-down("md") {
+    .m-navbar {
+        .m-navbar-first-level {
+            display: none;
+        }
+    }
+
+    .m-navbar-dropdown {
+        background: $c-white;
+
+        #m-navbar-mobile {
+            width: 100%;
+
+            ul {
+                padding: 0;
+                padding-left: 15px;
+                padding-top: 15px;
+                list-style-type: none;
+                font-weight: $fw-bold;
+
+                ul {
+                    padding-top: 5px;
+                    padding-left: 15px;
+                    margin-bottom: 15px;
+                    font-weight: $fw-regular;
+                    line-height: $lh-big;
+
+                    li {
+
+                        a {
+                            color: $c-bg-dark;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down("lg") {
+    .o-header-new {
+        .m-navbar {
+            .m-navbar-first-level {
+                li:last-child {
+                    .m-navbar-second-level {
+                        margin-left: -98px;
+                    }
+                }
+
+                .m-navbar-inactive {
+                    &:last-child {
+                        .m-navbar-second-level {
+                            margin-left: -82px;
+                            // maybe this part should be in the atoms/style/navbar.scss?
+                            .a-navbar-list-item {
+                                width: 170px;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

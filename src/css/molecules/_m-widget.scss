@@ -1,0 +1,43 @@
+//@Author: Raffael Pace <mBook>
+//@Date:   2017-24-01T12:15:12+01:00
+//@Email:  raffael.pace@kautionsfrei.de
+//@Last modified by:   mBook
+//@Last modified time: 2017-24-01T12:15:12+01:00
+
+
+.m-widget-content{
+	margin-top: 45px;
+}
+.m-widget-summbox{
+	padding: 15px 15px 30px 15px;
+    background: #ececec;
+    border-radius: 2px;
+    margin-top: 25px;
+    border: 1px solid rgb(198, 198, 198);
+	p{
+		&:last-of-type{
+			font-size: $fs-s;
+		}
+	}
+	.fa{
+		position: absolute;
+		right: 10px;
+		top: 15px;
+	}
+}
+.m-widget-usage{
+	margin-top: 45px;
+}
+.m-widget-summbox-output{
+	overflow: hidden;
+}
+.m-widget-summbox-output-value {
+	p{
+		&:last-of-type{
+			width: 100%;
+			float: left;
+			font-size: $fs-s;
+			color: $c-text-main;
+		}
+	}
+}

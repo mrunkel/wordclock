@@ -1,0 +1,68 @@
+//@Author: Raffael Pace <mBook>
+//@Date:   2017-24-01T12:15:12+01:00
+//@Email:  raffael.pace@kautionsfrei.de
+//@Last modified by:   mBook
+//@Last modified time: 2017-24-01T12:15:12+01:00
+
+.a-page-item {
+  &:first-child {
+    .a-page-link {
+	    margin-left: 0;
+      border-left: 0;
+    }
+  }
+  &:last-child {
+    .a-page-link {
+      border-right: 0;
+    }
+  }
+
+  &.active .a-page-link {
+    z-index: 0;
+    color: $c-white;
+    background-color: $c-main;
+    border-color: $c-main;
+  }
+  &.disabled .a-page-link {
+    color: $c-grey;
+    cursor: not-allowed;
+    border-color: $c-bg-dark;
+    &:hover{
+      background: none;
+     color: $c-bg-dark;
+      -webkit-text-fill-color: $c-bg-dark;
+    }
+  }
+}
+
+.a-page-link {
+  position: relative;
+  display: block;
+  padding: 5px 10px;
+  margin-left: -1px;
+  line-height: 1px;
+  color: $c-main;
+  border: 1px solid $c-bg-dark;
+  border-top: none;
+  border-bottom: none;
+  padding: 15px;
+  &:hover{
+  	background-color: $c-main-dark;
+  	color: $c-white;
+    -webkit-text-fill-color: $c-white;
+  }
+  i {
+    line-height: 1px;
+  }
+  /*@include hover-focus {
+    color: $pagination-hover-color;
+    text-decoration: none;
+    background-color: $pagination-hover-bg;
+    border-color: $pagination-hover-border;
+  }*/
+}
+
+
+
+
+

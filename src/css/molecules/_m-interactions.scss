@@ -1,0 +1,166 @@
+//@Author: Raffael Pace <mBook>
+//@Date:   2017-26-01T12:09:07+01:00
+//@Email:  raffael.pace@kautionsfrei.de
+//@Last modified by:   mBook
+//@Last modified time: 2017-26-01T12:09:07+01:00
+
+.m-slider-bar {
+  border: 2px solid $c-main;
+  height: 17px;
+  margin-top: 20px;
+  border-radius: 10px;
+  position: relative;
+  a {
+    background: $c-main;
+    border: 1px solid $c-white;
+    padding: 15px 15px;
+    border-radius: 16px;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    margin-left: -15px;
+  }
+  .m-slider-range {
+    background: $c-main;
+    width: 50%;
+    display: block;
+    overflow: hidden;
+    padding: 7px;
+    border-radius: 4px;
+  }
+}
+
+.m-calc-display {
+  padding: 25px 20px;
+  background: $c-main;
+  border-radius: 5px;
+  margin: 30px -35px 20px;
+  .a-paragraph {
+    color: $c-white;
+    margin-bottom: 10px !important;
+  }
+  .a-heading {
+    margin-bottom: 0;
+    margin-top: 19px;
+    font-size: $fs-heading-xs;
+    color: $c-white;
+    display: block;
+    font-weight: $fw-bold;
+  }
+  input {
+    text-align: center;
+    border: none;
+    padding: 8px 0;
+    color: $c-main;
+    font-size: $fs-heading-xs;
+    max-width: 80%;
+    box-shadow: inset 0 0 15px #ccc;
+    -webkit-appearance: none;
+    border-radius: 5px;
+
+  }
+}
+
+.m-calc-content {
+  .a-paragraph {
+    margin-bottom: 10px;
+    margin-top: 4px;
+  }
+}
+
+.m-step-wizard {
+  position: relative;
+  .a-img-steps {
+    z-index: 10;
+  }
+  p {
+    text-align:center;
+  }
+}
+
+.m-back-top {
+  text-align: right;
+  font-size: $fs-s;
+  a {
+    &:hover {
+      + hr {
+        border-color: $c-main-dark;
+      }
+    }
+  }
+  hr {
+    border-color: $c-main;
+    margin-top: 5px;
+
+  }
+}
+
+@include media-breakpoint-down("sm") {
+  .m-calc-display {
+    margin: 30px 0px 20px;
+    input {
+      min-width: 100%;
+    }
+    .a-heading {
+      margin-top: 0px;
+    }
+  }
+}
+
+.m-ekomi-progress {
+  height: 30px;
+  position: relative;
+  background: #f4f4f4;
+  -moz-border-radius: 25px;
+  -webkit-border-radius: 25px;
+  border-radius: 0px 20px 20px 0px;
+  border: 1px solid #ccc;
+  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+  margin-bottom: 30px;
+
+  @for $i from 1 through 100 {
+    .a-bar-green-#{$i} {
+      $value: ($i * 1%);
+      width: $value;
+      background-color: #96bf2f;
+    }
+  }
+
+  @for $i from 1 through 100 {
+    .a-bar-yellow-#{$i} {
+      $value: ($i * 1%);
+      width: $value;
+      background-color: #ffd800;
+    }
+  }
+
+  @for $i from 1 through 100 {
+    .a-bar-red-#{$i} {
+      $value: ($i * 1%);
+      width: $value;
+      background-color: #bb0932;
+    }
+  }
+
+}
+
+.m-ekomi-progress .a-bar {
+  display: block;
+  height: 100%;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  position: relative;
+  overflow: hidden;
+
+}
+
+@media (max-width:767px) {
+  .m-ekomi-progress {
+    border-radius: 20px 20px 20px 20px;
+    .a-bar {
+      border-radius:20px 0px 0px 20px;
+    }
+  }
+}

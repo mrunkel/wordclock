@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html lang="us-EN" dir="ltr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>Word Clock</title>
+  <link href="/assets/css/all.css" rel="stylesheet">
+  <link href="/assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+<header class="o-header-aak">
+  <div class="container">
+    <div class="row">
+      <div class="col-2">
+      </div>
+      <div class="col-10">
+        <nav class="m-navbar float-right" id="m-navbar-desktop">
+          <ul class="m-navbar-first-level">
+            <li class="m-navbar-inactive">
+<!--              <a href="#about">About</a>-->
+            </li>
+          </ul>
+        </nav>
+        <div class="a-navbar-mobile-trigger" id="a-navbar-mobile-trigger">
+          <i class="fal fa-bars"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="m-navbar-dropdown box-shadow">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav id="m-navbar-mobile">
+            <ul class="m-navbar-first-level">
+              <li class="m-navbar-inactive">
+<!--                <a href="/#about">About</a>-->
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="o-main-aak">
+  <section class="o-section">
+    <!-- START Headline -->
+    <div class="container">
+      <section class="o-section">
+        <div class="row">
+          <div class="col-12">
+            <div class="a-heading a-heading-center a-heading-light" id="clock-us">It's 5 minutes before two.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="a-heading a-heading-center a-heading-light" id="clock-german">Es ist 5 minuten vor zwei</div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- END Headline -->
+
+
+    <section class="o-section o-section-blue" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="a-heading a-heading-center a-heading-light a-heading-blue">About this page.</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-2 offset-2">
+            <i class="fal fa-clock fa-2x"></i>
+          </div>
+          <div class="col-8">
+            <p class="a-paragraph">
+              I built this page because my wife said she really liked a similar clock on the wall of a coffee shop near
+              us and I thought it would be a good way to learn about Javascript string handling and timezones.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+</main>
+<footer class="o-footer-new">
+  <div class="o-footer-aak">
+    <div class="container">
+      <div class="m-footer-top align-center">
+        <img src="/images/system/logo.png">
+      </div>
+      <div class="m-footer-middle align-center">
+        <p class="a-paragraph a-paragraph-center">Developed with ❤️ by Marc Runkel</p>
+        <a href="https://runkel.org/">runkel.org</a>
+        <span>|</span>
+        <a href="/">Kontakt</a>
+      </div>
+      <div class="m-footer-bottom">
+        <div class="row">
+          <div class="col-12">
+            <div class="m-footer fs-s align-center">
+              <a href="/impressum">Impressum</a>
+              <span>|</span>
+              <a href="/datenschutz">Datenschutz</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/moment.min.js"></script>
+<script src="/assets/js/moment-timezone-with-data.js"></script>
+<script src="/assets/js/main.js"></script>
+<script>
+  initClock();
+</script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+// These are legacy styles for the imported blog, pressemitteilungen
+// and fachartikel. @todo integrate them into our CSS and edit articles.
+
+.wellhl {
+    padding: 15px;
+    margin: 0 -15px 20px;
+    border: 0px none;
+    color: #fff;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    background-color: #ffa046;
+}
+
+.welldashed {
+    border: 2px dashed #aadc1e;
+    min-height: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: transparent;
+}
+
+.wellaside {
+    min-height: 20px;
+    padding: 20px;
+    margin: 20px 0px;
+    border: 0px solid #FAFAFA;
+    border: 0px solid #fafafa;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.12) inset;
+    -moz-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.12) inset;
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.12) inset;
+    background-color: #f3f3f3;
+    background-image: -moz-linear-gradient(top, #f3f3f3, #f3f3f3);
+    background-image: -webkit-linear-gradient(top, #f3f3f3, #f3f3f3);
+    background-image: -o-linear-gradient(top, #f3f3f3, #f3f3f3);
+    background-image: linear-gradient(to bottom, #f3f3f3, #f3f3f3);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#f3f3f3', endColorstr = '#f3f3f3', GradientType = 0)
+}
+
+.wellhl p {
+    color: inherit;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.wellhl p:last-child {
+    margin-bottom: 0;
+}
+
+.inner_wrapped_image_cke {
+    font-family: $ff-opensans;
+    color: $c-text-main;
+    font-size: 15px;
+    font-style: italic;
+    margin: 10px 0px 0px;
+}
+
+.wrapped_image_cke {
+    width: 50%;
+    float: left;
+    margin: 5px 20px 5px 0px;
+}
+
+.icon-green {
+    color: $c-main;
+}
+
+.dark {
+    color: #333333;
+}
+
+.blog {
+    figure {
+        margin: 20px 0px;
+    }
+
+    ul {
+        margin: 20px 0px;
+    }
+
+    ol {
+        margin: 20px 0px;
+    }
+
+    .a-heading {
+        margin: 20px 0px;
+    }
+
+    .a-paragraph {
+        margin: 20px 0px;
+    }
+
+    .m-box-dotted {
+        margin: 20px 0px;
+    }
+
+    .a-caption-text {
+        margin-top: 10px;
+    }
+
+    li .a-paragraph {
+        margin: 5px 0px;
+    }
+
+    .m-box-dotted {
+        padding: 0px 20px;
+
+        .a-paragraph {
+            margin: 10px 0px;
+        }
+    }
+
+    .wrapped_image_cke {
+        margin: 0px 30px 10px 0px;
+    }
+
+    .inner_wrapped_image_cke {
+        color: #666;
+        font-family: Open-Sans, sans-serif;
+    }
+}
+
+.pressemitteilungen {
+    h2, h3, h4 {
+        margin: 20px 0px 10px;
+    }
+
+    .a-paragraph {
+        margin: 10px 0px 0px;
+    }
+
+    li {
+        margin: 10px 0px 20px 30px;
+    }
+}
+
+@include media-breakpoint-down('sm') {
+    .wrapped_image_cke {
+        width: 100%;
+        float: none;
+        margin: 0 0 15px 0;
+    }
+}

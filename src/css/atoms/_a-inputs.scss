@@ -1,0 +1,103 @@
+// @Author: Matthias Gohla <Matze>
+// @Date:   2016-09-22T11:19:28+02:00
+// @Email:  matze_lebt@gmx.de
+// @Last modified by:   Matze
+// @Last modified time: 2016-09-26T16:13:54+02:00
+
+
+.a-input {
+
+}
+
+$a-input-slider__drag-size: 22px;
+
+// -slider
+.extendable__a-input-slider,
+.a-input-slider {
+    // use this box to receive click and drag events!!!!
+    height: 34px;
+    padding: 10px 0px;
+    -webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+    cursor: pointer;
+}
+    // -range
+    .extendable__a-input-slider-range,
+    .a-input-slider-range {
+        height: 14px;
+        background-color: $c-white;
+        border: 1px solid #DCDCDC; // change it on different backgrounds
+        border-radius: 7px;
+        position: relative;
+        cursor: pointer;
+    }
+        // -bar
+        .extendable__a-input-slider-bar,
+        .a-input-slider-bar {
+            width: 30%; // change this width value to change the slider by javascript!
+            background-color: $c-second;
+            height: 10px;
+            position: absolute;
+            margin: 1px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+            // -drag
+            .extendable__a-input-slider-drag,
+            .a-input-slider-drag {
+                position: absolute;
+                right: (($a-input-slider__drag-size / -2) - 1px); // -1 px form the 11 px for visual look and feel
+                top: -6px;
+                width: $a-input-slider__drag-size;
+    	        height: $a-input-slider__drag-size;
+    	        background-color: white;
+    	        border: solid 3px $c-second;
+                border-radius: ($a-input-slider__drag-size / 2);
+                cursor: pointer;
+            }
+    // -minvalue
+    .extendable__a-input-slider-minvalue,
+    .a-input-slider-minvalue {
+        color: #ABABAB; // change this color on backgrounds!
+        position: absolute;
+        left: -1px;
+        top: 18px;
+        text-align: left;
+        display: inline-block;
+    }
+    // -maxvalue
+    .extendable__a-input-slider-maxvalue,
+    .a-input-slider-maxvalue {
+        color: #ABABAB; // change this color on backgrounds!
+        position: absolute;
+        right: -1px;
+        top: 18px;
+        text-align: right;
+        display: inline-block;
+    }
+
+
+// -calculator-deposit
+.a-input-calculator-deposit {
+    color: $c-second;
+    text-align: center;
+    height: 50px;
+    border: 1px solid #ccc;
+    background: $c-white;
+    width: 100%;
+
+    &:focus {
+        -moz-box-shadow:    inset 0px 0px 14px 0px rgba(139,32,235,0.20);
+        -webkit-box-shadow: inset 0px 0px 14px 0px rgba(139,32,235,0.20);
+        box-shadow:         inset 0px 0px 14px 0px rgba(139,32,235,0.20);
+        outline: none;
+    }
+
+    &::-webkit-input-placeholder { color: #ccc; }
+    &:-moz-placeholder { color: #ccc; } // Firefox 18-
+    &::-moz-placeholder { color: #ccc; } // Firefox 19+
+    &:-ms-input-placeholder { color: #ccc; }
+
+}

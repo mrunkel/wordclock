@@ -1,0 +1,581 @@
+.o-video-player {
+    position: relative;
+    padding-bottom: 56.23%;
+    /* Use 75% for 4:3 videos */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: $c-white;
+    border: 1px solid lightgrey;
+    margin: 5px;
+}
+
+.o-video-player iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background: transparent;
+}
+
+.o-video-player img {
+    bottom: 0;
+    display: block;
+    left: 0;
+    margin: auto;
+    max-width: 100%;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    height: auto;
+    cursor: pointer;
+    -webkit-transition: .4s all;
+    -moz-transition: .4s all;
+    transition: .4s all;
+}
+
+.o-video-player img:hover {
+    -webkit-filter: brightness(75%);
+}
+
+.o-video-player .play {
+    height: 72px;
+    width: 72px;
+    left: 50%;
+    top: 50%;
+    margin-left: -36px;
+    margin-top: -36px;
+    position: absolute;
+    background: url("//i.imgur.com/TxzC70f.png") no-repeat; // @todo move to local /assets/images/play.png
+    cursor: pointer;
+}
+
+//
+// o-banner
+// this is a complete refactor strict following atomic design rules
+//
+.o-banner {
+
+}
+
+.o-banner-video {
+    &.o-banner-video__modalbackground {
+        position: fixed;
+        z-index: 2;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: #111;
+        opacity: 0.85;
+    }
+
+    &.o-banner-video__modalcontent {
+        top: 7.5%;
+        max-height: 85%;
+        left: 5.5%;
+        width: 89%;
+        position: fixed;
+        background-color: $c-white;
+        z-index: 3;
+        padding: 0px 0px 10px 0px;
+        overflow: scroll;
+
+        & > * {
+            padding: 0 10px;
+        }
+    }
+
+    .o-banner-video__modalheader {
+        margin-top: 12px;
+        margin-bottom: 16px;
+    }
+
+    .o-banner-video__controlbutton {
+        display: inline-block;
+        position: absolute;
+        background-image: url(/assets/images/btn-play-sprite.png);
+        width: 96px;
+        height: 63px;
+        z-index: 2;
+        right: 222px;
+        top: 86px;
+        background-size: 90%;
+
+        &:hover {
+            background-position: 0 68px;
+        }
+    }
+}
+
+@include media-breakpoint-up("md") {
+
+    .o-banner {
+
+    }
+
+    .o-banner-video {
+        &.o-banner-video__modalbackground {
+        }
+
+        &.o-banner-video__modalcontent {
+            top: 17.5%;
+            max-height: 65%;
+            left: 20%;
+            width: 60%;
+
+            & > * {
+
+            }
+        }
+
+        .o-banner-video__modalheader {
+            &:hover, &:focus {
+            }
+        }
+
+        .o-banner-video__controlbutton {
+            &:hover {
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up("lg") {
+
+    .o-banner {
+
+    }
+
+    .o-banner-video {
+
+        &.o-banner-video__modalbackground {
+        }
+
+        &.o-banner-video__modalcontent {
+            & > * {
+            }
+        }
+
+        .o-banner-video__modalheader {
+            &:hover, &:focus {
+            }
+        }
+
+        .o-banner-video__controlbutton {
+            width: 107px;
+            height: 84px;
+            z-index: 2;
+            right: 231px;
+            top: 89px;
+
+            &:hover {
+                background-position: 0 75px;
+            }
+        }
+    }
+}
+
+// Style for the video module (onepager lemonade template)
+.o-video-section {
+    position: relative;
+    padding-bottom: 0;
+
+    .o-banner-video {
+        .m-box-video {
+            min-width: 100%;
+
+            .a-btn {
+                margin: 50px 0px 10px;
+            }
+
+            .bottom {
+                .o-banner-video__play {
+                    color: $c-text-main;
+
+                    &:hover {
+                        color: $c-main-dark;
+                    }
+
+                    .fa-play-circle {
+                        color: $c-main;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .a-image-desktop {
+        z-index: -1;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        max-width: 1400px;
+        transform: translateX(-50%);
+    }
+
+    .a-image-mobile {
+        z-index: -1;
+        margin-top: -100px;
+    }
+}
+
+// a-image-desktop and a-image-mobile are defined for two different images
+
+@include media-breakpoint-up ("md") {
+    .o-video-section {
+        .a-image-desktop {
+            top: 45%;
+        }
+    }
+}
+
+@include media-breakpoint-up ("lg") {
+    .o-video-section {
+        .a-image-desktop {
+            top: 25%;
+        }
+    }
+}
+
+@include media-breakpoint-up ("xl") {
+    .o-video-section {
+        .a-image-desktop {
+        }
+    }
+}
+
+@include media-breakpoint-up ("xs") {
+    .o-video-section {
+        .a-image-mobile {
+            margin-top: -50px;
+        }
+    }
+}
+
+// this part defines the spaces between the first background image and the next section
+//because the background image floats automatically
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .o-video-section {
+        .a-image-mobile {
+            margin-top: -15px;
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 815px) {
+    .o-video-section {
+        margin-bottom: 70px;
+
+        .a-image-desktop {
+            margin-top: 80px;
+        }
+    }
+}
+
+@media (min-width: 816px) and (max-width: 880px) {
+    .o-video-section {
+        margin-bottom: 100px;
+
+        .a-image-desktop {
+            margin-top: 80px;
+        }
+    }
+}
+
+@media (min-width: 881px) and (max-width: 991px) {
+    .o-video-section {
+        margin-bottom: 130px;
+
+        .a-image-desktop {
+            margin-top: 80px;
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1100px) {
+    .o-video-section {
+        margin-bottom: 85px;
+
+        .a-image-desktop {
+            margin-top: 80px;
+        }
+    }
+}
+
+@media (min-width: 1101px) and (max-width: 1199px) {
+    .o-video-section {
+        margin-bottom: 110px;
+
+        .a-image-desktop {
+            margin-top: 80px;
+        }
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1300px) {
+    .o-video-section {
+        margin-bottom: 140px;
+
+        .a-image-desktop {
+            margin-top: 80px;
+        }
+    }
+}
+
+@media (min-width: 1301px) {
+    .o-video-section {
+        margin-bottom: 170px;
+
+        .a-image-desktop {
+            margin-top: 80px;
+        }
+    }
+}
+
+
+// Video with preview option on campaign landingpages
+
+.o-video-lp {
+    .m-video-player {
+        @include box-shadow(0, 0px, 7px, -1px rgba(48, 48, 48, 0.3));
+        margin: 20px 0;
+
+        .m-video-main {
+            position: relative;
+            padding-bottom: 56.23%;
+            max-width: 100%;
+            height: 0;
+            overflow: hidden;
+            background: $c-white;
+
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 100;
+                background: transparent;
+            }
+        }
+
+        .m-video-preview {
+            height: 160px;
+            padding: 15px 15px;
+            display: flex;
+            flex-wrap: wrap;
+
+            .a-paragraph {
+                margin-bottom: 10px;
+            }
+
+            .m-video_preview__window {
+                height: 90px;
+                width: 100%;
+                background: white;
+
+                img {
+                    height: 90px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .m-video-sharing {
+        .a-paragraph {
+            a {
+                color: $c-text-main !important;
+
+                i {
+                    margin-right: 10px;
+                    font-size: 0.85em;
+                }
+            }
+        }
+    }
+}
+
+
+@include media-breakpoint-down ("sm") {
+    .o-video-lp {
+        .m-video-player {
+            .m-video-preview {
+                padding: 10px 15px;
+                height: 230px;
+
+                .m-video_preview__window {
+                    height: 70px;
+                    margin-bottom: 10px;
+
+                    img {
+                        height: 70px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Popup sharing element under video module
+
+.o-banner-sharing {
+    &.o-banner-sharing__modalbackground {
+        position: fixed;
+        z-index: 20000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: #111;
+        opacity: 0.85;
+    }
+
+    &.o-banner-sharing__modalcontent {
+        top: 7.5%;
+        max-height: 85%;
+        left: 5.5%;
+        width: 89%;
+        position: fixed;
+        background-color: $c-white;
+        z-index: 20001;
+        padding: 0px 20px 0px 20px;
+        border-radius: 3px;
+        box-shadow: 0 0 7px -1px rgba(48, 48, 48, .3);
+
+        & > * {
+            padding: 0 0px;
+        }
+    }
+
+    .o-banner-sharing__modalheader {
+        margin-top: 12px;
+        margin-bottom: 45px;
+
+        .fa-times {
+            font-weight: 300;
+            color: $c-text-main;
+        }
+    }
+
+    .o-banner-sharing__controlbutton {
+        display: inline-block;
+        position: absolute;
+        background-image: url(/assets/images/btn-play-sprite.png);
+        width: 96px;
+        height: 63px;
+        z-index: 2;
+        right: 222px;
+        top: 86px;
+        background-size: 90%;
+
+        &:hover {
+            background-position: 0 68px;
+        }
+    }
+    .m-banner-sharing {
+        padding:10px 20px;
+        i {
+            width:20px;
+            font-size:1.2em;
+            margin-right:50px;
+        }
+    }
+}
+
+@include media-breakpoint-down ("sm") {
+    .o-banner-sharing {
+        &.o-banner-sharing__modalcontent {
+            top: 0%;
+            max-height: 100%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+        }
+    }
+}
+
+@include media-breakpoint-up ("sm") {
+    .o-banner-sharing {
+        &.o-banner-sharing__modalcontent {
+            top: 7.5%;
+            max-height: 85%;
+            left: 25.5%;
+            width: 50%;
+        }
+    }
+}
+
+@include media-breakpoint-up("md") {
+    .o-banner-sharing {
+        &.o-banner-sharing__modalbackground {
+        }
+
+        &.o-banner-sharing__modalcontent {
+            top: 7.5%;
+            max-height: 85%;
+            left: 30%;
+            width: 40%;
+
+            & > * {
+
+            }
+        }
+
+        .o-banner-sharing__modalheader {
+            &:hover, &:focus {
+            }
+        }
+
+        .o-banner-sharing__controlbutton {
+            &:hover {
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up("lg") {
+
+    .o-banner-sharing {
+
+        &.o-banner-sharing__modalbackground {
+        }
+
+        &.o-banner-sharing__modalcontent {
+            top: 7.5%;
+            max-height: 85%;
+            left: 35%;
+            width: 30%;
+
+            & > * {
+            }
+        }
+
+        .o-banner-sharing__modalheader {
+            &:hover, &:focus {
+            }
+        }
+
+        .o-banner-sharing__controlbutton {
+            width: 107px;
+            height: 84px;
+            z-index: 2;
+            right: 231px;
+            top: 89px;
+
+            &:hover {
+                background-position: 0 75px;
+            }
+        }
+    }
+}

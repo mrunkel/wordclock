@@ -1,0 +1,131 @@
+// @Author: Michael Neumair <mBook>
+// @Date:   2016-08-22T17:24:25+02:00
+// @Email:  7q7w7e7r@gmail.com
+// @Last modified by:   mBook
+// @Last modified time: 2016-09-22T16:35:19+02:00
+
+// @import './../../../configs/scss/vars';
+// @import './../../../configs/scss/media-queries';
+
+.m-input-text {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  &.error {
+    .m-input-text__input {
+      border: $border-form-error;
+      box-shadow: $error-shadow;
+    }
+  }
+
+  &.disabled {
+    opacity: .5;
+
+    .m-input-text__input {
+      box-shadow: none;
+    }
+  }
+}
+
+.m-input-text__inputfield {
+  flex: 1;
+  position: relative;
+
+  input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  input[type=number]:hover::-webkit-inner-spin-button {
+    background: none;
+  }
+
+}
+
+.m-input-text__input {
+  color: $c-black;
+  height: 44px;
+  background: $c-white;
+  border: $border-form;
+  border-radius: 2px;
+  padding: 11px 12px;
+  width: 100%;
+  background-color: $c-white;
+  font-weight: $fw-light;
+
+  &:hover {
+    box-shadow: 0 0 10px rgba($c-second, .10) inset;
+  }
+
+  &:focus {
+    box-shadow: 0 0 10px rgba($c-second, .35) inset;
+    outline: none;
+  }
+}
+
+.m-input-text__unit {
+  pointer-events: none;
+  color: #7c7c7c;
+  display: inline-block;
+  position: absolute;
+  width: 50px;
+  text-align: center;
+  top: 13px;
+  right: 0;
+}
+
+.m-input-text__actions {
+  display: flex;
+
+  > .a-button,
+  > .o-date-picker-button {
+    margin-left: -1px; // border width
+    height: 44px;
+
+    &:last-of-type {
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
+  }
+}
+
+.m-input-textarea__input {
+  color: $c-grey;
+  height: 176px;
+  background: $c-white;
+  border: $border-form;
+  border-radius: 2px;
+  padding: 11px 12px;
+  width: 100%;
+  background-color: #f8f8f8;
+
+  &:hover {
+    box-shadow: 0 0 10px rgba($c-second, .10) inset;
+  }
+
+  &:focus {
+    box-shadow: 0 0 10px rgba($c-second, .35) inset;
+    outline: none;
+  }
+}
+
+
+@include media-breakpoint-down("md") {
+  .m-input-text__input {
+    height: 38px;
+    padding: 9px 12px;
+  }
+
+  .m-input-text__unit {
+    top: 9px;
+  }
+
+  .m-input-text__actions {
+    > .a-button,
+    > .o-date-picker-button {
+      height: 38px;
+    }
+  }
+}
+

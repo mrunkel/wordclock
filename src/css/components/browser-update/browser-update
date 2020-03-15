@@ -1,0 +1,19 @@
+body {
+  .buorg {
+      background-color:$c-white;
+      padding: 0px 0px;
+      border-bottom: 1px solid #ccc;
+  }
+  .buorg-pad {
+      .buorg-moremsg {
+        color: #000;
+      }
+    .buorg-bottom {
+      margin-top: 20px;
+
+      #buorgig {
+        background-color: #cccccc;
+      }
+    }
+  }
+}

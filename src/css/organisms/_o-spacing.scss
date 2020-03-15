@@ -1,0 +1,258 @@
+//@Author: Raffael Pace <mBook>
+//@Date:   2017-15-02T12:11:07+01:00
+//@Email:  raffael.pace@kautionsfrei.de
+//@Last modified by:   mBook
+//@Last modified time: 2017-15-02T12:11:07+01:00
+
+.o-accordion {
+    .a-heading {
+        &:first-of-type {
+            margin-bottom: 20px;
+        }
+    }
+    .m-accordion {
+        .a-heading {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.o-step-wizard {
+    .m-step-wizard {
+        img {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.o-box {
+    .m-box-ekomi-review {
+        width: 100%;
+        .a-heading {
+            margin-bottom: 20px;
+        }
+    }
+    .m-box-info {
+        width: 100%;
+        .a-heading {
+            margin-bottom: 20px;
+        }
+    }
+    .m-box-contact {
+        .a-heading {
+            margin-bottom: 20px;
+        }
+    .a-btn {
+        margin-top: 20px;
+        }
+    }
+    .m-box-partner {
+        .a-btn {
+            margin-top: 15px;
+        }
+    }
+    .m-box-awards {
+        .a-paragraph {
+            margin: 0px;
+        }
+        .a-heading {
+            margin: 0px;
+        }
+        .m-awards {
+            margin-top: 20px;
+        }
+    }
+}
+
+.o-heading {
+    .a-heading {
+        margin-bottom: 20px;
+    }
+}
+
+.o-review {
+    .a-paragraph {
+        &:first-of-type {
+            margin-bottom: 10px;
+        }
+    }
+    .m-list-ekomistars {
+    }
+}
+
+.o-article {
+    .a-heading {
+        margin-bottom: 20px;
+    }
+    i {
+        margin-top: 15px;
+        display: block;
+    }
+}
+
+.o-ekemi-widget {
+    .a-heading {
+        margin-bottom: 20px;
+        + .a-paragraph {
+            margin-bottom: 20px;
+        }
+    }
+    .m-list-ekomistars {
+        margin: 10px 0 25px;
+    }
+    .a-media-responsive {
+        + .a-paragraph {
+            margin-top: 20px;
+        }
+    }
+}
+
+.o-contact-single {
+    .a-btn-block {
+        margin-top: 15px;
+    }
+    .a-paragraph {
+        margin-top: 15px;
+    }
+}
+
+@include media-breakpoint-down("xs") {
+    .o-contact-single {
+        .m-box {
+            img {
+                margin-bottom: 20px !important;
+            }
+        }
+    }
+    .o-review {
+        .a-paragraph {
+            text-align: left !important;
+            &:first-of-type {
+                margin-bottom: 10px;
+            }
+        }
+        .m-list-ekomistars {
+            margin-bottom: 20px
+        }
+    }
+}
+
+@include media-breakpoint-down("sm") {
+    .o-btn {
+        margin-top: 20px;
+    }
+    .o-factory {
+        .a-paragraph {
+            margin: 15px 0;
+        }
+    }
+    .o-list {
+        .m-list {
+            margin-top: 20px;
+        }
+    }
+    .o-article {
+        img {
+            margin-bottom: 20px;
+        }
+    }
+    .o-box {
+        .m-box {
+            margin-top: 30px;
+        }
+        .row {
+            &:first-child {
+                div {
+                    &:first-child {
+                        .m-box {
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .o-step-wizard {
+        .m-step-wizard {
+            margin-bottom: 30px;
+        }
+        div {
+            div {
+                &:last-child {
+                    .m-step-wizard {
+                        margin-bottom: 0 !important;
+                    }
+                }
+            }
+        }
+    }
+    .o-contact-single {
+        .m-box {
+            img {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .o-review {
+        .a-paragraph {
+            text-align: left !important;
+        }
+    }
+}
+
+@include media-breakpoint-down("md") {
+    .o-step-wizard {
+        div {
+            div {
+                &:nth-child(-n+2) {
+                    .m-step-wizard {
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .o-box {
+        .m-box {
+            margin-top: 30px;
+        }
+        .row {
+            &:first-child {
+                div {
+                    &:first-child {
+                        .m-box {
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .m-box-contact {
+            margin-top: 0px;
+        }
+    }
+}
+
+.o-sidebar {
+    .m-box {
+        .a-btn {
+            margin-top: 15px;
+        }
+    }
+}
+
+.o-sidebar {
+    .m-box-ekomi-review {
+        .m-box-grey {
+            padding: 35px 20px 25px 20px;
+            margin-top:40px;
+        }
+        .m-image-full {
+            top: -30px;
+            left: 50%;
+        }
+    }
+}

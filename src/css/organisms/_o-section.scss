@@ -1,0 +1,54 @@
+//@Author: Raffael Pace <mBook>
+//@Date:   2017-15-02T12:11:07+01:00
+//@Email:  raffael.pace@kautionsfrei.de
+//@Last modified by:   mBook
+//@Last modified time: 2017-15-02T12:11:07+01:00
+
+.o-content {
+	.o-section {
+		background: none !important;
+		margin-bottom: 0px !important;
+	}
+}
+.o-sidebar{
+	.m-calc-display{
+		margin: 30px 0 20px;
+		.a-paragraph{
+			font-size: $fs-s;
+		}
+		.a-heading{
+			margin-top: 0;
+		}
+		input {
+			max-width: 100%;
+		}
+	}
+}
+.o-section {
+	 	padding: 15px 0;
+	 	&.o-section-grey{
+			background: $c-bg-light;
+	 	}
+		&.o-section-blue{
+			background: $c-bg-blue;
+			margin-top: 20px;
+		}
+	}
+.o-footer{
+	background: $c-grey;
+	padding: 30px 0;
+	border-top: 2px solid $c-text-main;
+
+	// needed because atom name collides with OnlineAntrag
+	.a-link-footer {
+        font-size: inherit;
+        color: #d1d0ce;
+
+	    &:hover {
+		    color: $c-white;
+	    }
+    }
+}
+.o-brands{
+	padding-top: 30px;
+}

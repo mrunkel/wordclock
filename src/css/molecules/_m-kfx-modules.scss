@@ -1,0 +1,103 @@
+.o-kfx-banner-calc {
+    .m-kfx-banner-top {
+        background-image: url('/assets/images/kfx-header.jpg');
+        height: 450px;
+        margin-top: -13px;
+        padding-top: 100px;
+        background-repeat: no-repeat;
+        background-position: 45% 100%;
+
+        .a-heading {
+            background-color: $c-main;
+            color: $c-white;
+            display: inline-block;
+            padding: 1.2rem;
+        }
+
+        .a-paragraph {
+            margin-bottom: 0em;
+            color: $c-main;
+            background-color: $c-white;
+            padding: 0.5rem 1.2rem;
+            float: left;
+            text-transform: uppercase;
+        }
+    }
+
+    .o-section-grey {
+        .o-box {
+            .m-box {
+                .m-box-inner {
+                    padding: 15px 10px 15px 10px;
+
+                    .a-wbv-text {
+                        font-size: 0.7em;
+                        margin-bottom: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (width: 992px) {
+    .o-kfx-banner-calc {
+        .o-section-grey {
+            .o-box {
+                .m-box {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .o-kfx-banner-calc {
+        .o-section-grey {
+            .o-box {
+                .m-box {
+                    .m-box-inner {
+                        padding: 15px 10px 13px 10px;
+                        .a-wbv-text {
+                            margin-bottom: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@include media-breakpoint-down('md') {
+    .o-kfx-banner-calc {
+        .m-kfx-banner-top {
+            background-position: 45% 60%;
+        }
+
+        .m-kfx-banner-top::before {
+            position: absolute;
+            left: 0px;
+            top: 16%;
+            content: '';
+            height: 84.5%;
+            width: 100%;
+            opacity: 1;
+            background-color: rgba(256, 256, 256, 0.5);
+        }
+    }
+}
+
+@include media-breakpoint-down('sm') {
+    .o-kfx-banner-calc {
+        .m-kfx-banner-top {
+            background-position: 55% 60%;
+        }
+
+        .m-kfx-banner-top::before {
+            top: 15%;
+            height: 85.3%;
+        }
+    }
+}

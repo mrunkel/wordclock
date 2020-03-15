@@ -1,0 +1,186 @@
+//@Author: Raffael Pace <mBook>
+//@Date:   2017-24-01T12:15:12+01:00
+//@Email:  raffael.pace@kautionsfrei.de
+//@Last modified by:   mBook
+//@Last modified time: 2017-24-01T12:15:12+01:00
+
+// generic text format
+body {
+  font-family: $ff-first;
+  line-height: $lh;
+  color: #696969;
+  font-weight: $fw-light;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: $fs-heading-xs;
+  font-weight: $fw-regular;
+  color: $c-text-main;
+  display: block;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+p, span {
+  color: $c-text-main;
+  line-height: $lh-big;
+  margin-bottom: 0;
+  font-weight: $fw-lighter;
+
+  strong {
+    font-weight: $fw-bold;
+  }
+}
+
+blockquote, em {
+  font-style: italic;
+}
+
+.a-hotline {
+  width: 100%;
+  text-align: right
+}
+
+.m-footer-socials {
+  .a-hotline {
+    color: $c-text-main;
+
+    a {
+      color: $c-text-main;
+    }
+  }
+}
+
+.o-header-new {
+  .a-hotline {
+    b {
+      color: $c-second;
+      font-weight: 600;
+    }
+  }
+}
+
+a {
+  font-weight: $fw-light;
+}
+
+p {
+  color: $c-text-main;
+  line-height: $lh-big;
+  margin-bottom: 0;
+  font-weight: $fw-lighter;
+
+  b {
+    color: $c-text-main;
+    font-weight: $fw-bold;
+  }
+
+  i {
+    font-size: $fs-xs;
+  }
+
+}
+
+.a-paragraph {
+  color: $c-text-main;
+  line-height: $lh-big;
+  margin-bottom: 0;
+  font-weight: $fw-lighter;
+
+  b {
+    color: $c-main-dark;
+    font-weight: $fw-bold;
+  }
+
+  i {
+    font-size: $fs-xs;
+  }
+
+  &.a-paragraph-left {
+    text-align: left;
+  }
+
+  &.a-paragraph-right {
+    text-align: right;
+  }
+
+  &.a-paragraph-center {
+    text-align: center;
+  }
+}
+
+
+.a-view-ekomi-value {
+  margin: 4px 2px;
+  color: $c-grey;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.a-ekomi-date {
+  padding: 1px 10px;
+  color: $c-grey;
+  float: left;
+}
+
+.a-view-ekomi-voices {
+  color: $c-grey;
+  float: left;
+  width: 100%;
+  text-align: center;
+}
+
+.a-header-footer {
+  font-size: $fs-s;
+  color: #d1d0ce;
+  text-transform: uppercase;
+}
+
+.a-text-footer {
+  font-size: $fs-s;
+  color: #d1d0ce;
+}
+
+.a-caption-text {
+  font-style: italic;
+}
+
+@include media-breakpoint-down("md") {
+  .a-view-ekomi-voices {
+    float: none;
+    text-align: center;
+  }
+  .a-ekomie-comment {
+    float: left;
+    text-align: initial;
+  }
+}
+
+@include media-breakpoint-down("sm") {
+  .a-hotline {
+    padding-bottom: 8px;
+  }
+  .a-ekomie-comment {
+    text-align: center;
+  }
+}
+
+.a-progress-text {
+  font-weight: bold;
+  text-align: right;
+  position: absolute;
+  top: 3px;
+  color: #353232;
+  width: 90px;
+}
+
+.middle {
+  .m-middle-paragraph {
+    ul {
+      display: inline-block;
+      padding-left: 0;
+      text-align: left;
+      list-style: disc;
+    }
+  }
+}

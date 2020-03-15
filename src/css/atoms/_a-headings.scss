@@ -1,0 +1,90 @@
+//@Author: Raffael Pace <mBook>
+//@Date:   2017-24-01T12:15:12+01:00
+//@Email:  raffael.pace@kautionsfrei.de
+//@Last modified by:   mBook
+//@Last modified time: 2017-24-01T12:15:12+01:00
+
+
+.a-heading {
+    font-size: $fs-heading-xs;
+    font-weight: $fw-regular;
+    color: $c-text-main;
+    display: block;
+
+    &.a-heading-xs {
+        font-size: $fs-heading-xxs;
+    }
+
+    &.a-heading-s {
+        font-size: $fs-heading-s;
+    }
+
+    &.a-heading-m {
+        font-size: $fs-heading-m;
+    }
+
+    &.a-heading-l {
+        font-size: $fs-heading-l;
+    }
+
+    &.a-heading-xl {
+        font-size: $fs-heading-xl;
+    }
+
+    &.a-heading-xxl {
+        font-size: $fs-heading-xxl;
+    }
+
+    &.a-heading-second {
+        color: $c-main;
+    }
+
+    &.a-heading-main {
+        color: $c-second;
+    }
+
+    &.a-heading-white {
+        color: $c-white;
+    }
+
+    &.a-heading-grey {
+        color: $c-text-main;
+    }
+
+    &.a-heading-blue {
+        color: $c-main-dark;
+    }
+
+    &.a-heading-up {
+        text-transform: uppercase;
+    }
+
+    &.a-heading-light {
+        font-weight: $fw-light;
+    }
+
+    &.a-heading-bold {
+        font-weight: $fw-bold;
+    }
+
+    &.a-heading-extra-bold {
+        font-weight: $fw-extra-bold;
+    }
+
+    &.a-heading-left {
+        text-align: left;
+    }
+
+    &.a-heading-right {
+        text-align: right;
+    }
+
+    &.a-heading-center {
+        text-align: center;
+    }
+
+    & b {
+        color: $c-second;
+        font-weight: inherit;
+    }
+}

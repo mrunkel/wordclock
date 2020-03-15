@@ -1,0 +1,133 @@
+.m-image {
+  // this may be of use in the future
+  // for now it is only boilerplate
+
+  // the following patch is an example how
+  // (a|m|o)-<main-name> is used inside the scss
+
+  // this patches "figure" from _normalize.scss:72
+  margin: 0;
+}
+
+.m-image-full {
+  width: 100%;
+
+  .a-media {
+    display: block;
+    margin: 0 auto;
+  }
+
+  & :last-child {
+    padding-bottom: 18px;
+  }
+  & :first-child {
+    padding-bottom: 0;
+  }
+}
+
+.m-image-50left {
+  float: none;
+
+  .a-media-responsive {
+  }
+
+  & :last-child {
+    padding-bottom: 18px;
+  }
+}
+
+.m-image-50right {
+  float: none;
+
+  .a-media-responsive {
+  }
+
+  & :last-child {
+    padding-bottom: 18px;
+  }
+}
+
+.m-image-30left {
+  float: none;
+
+  .a-media-responsive {
+  }
+
+  & :last-child {
+    padding-bottom: 18px;
+  }
+}
+
+.m-image-30right {
+  float: none;
+
+  .a-media-responsive {
+  }
+
+  & :last-child {
+    padding-bottom: 18px;
+  }
+}
+
+// the behavior of image containers is changing on larger devices
+// they will float and take a percentage size
+// (relative size to embedding container)
+@include media-breakpoint-up("md") {
+  .m-image {
+  }
+
+  .m-image-full {
+    .a-media {
+    }
+    & :last-child {
+    }
+  }
+
+  .m-image-50left {
+    float: left;
+    width: 50%;
+
+    .a-media-responsive {
+      padding-right: 18px;
+    }
+
+    & :last-child {
+    }
+  }
+
+  .m-image-50right {
+    float: right;
+    width: 50%;
+
+    .a-media-responsive {
+      padding-left: 18px;
+    }
+
+    & :last-child {
+    }
+  }
+
+  .m-image-30left {
+    float: left;
+    width: 30%;
+
+    .a-media-responsive {
+      padding-right: 18px;
+    }
+
+    & :last-child {
+    }
+  }
+
+  .m-image-30right {
+    float: right;
+    width: 30%;
+
+    .a-media-responsive {
+      padding-left: 18px;
+    }
+
+    & :last-child {
+    }
+  }
+}

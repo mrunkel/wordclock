@@ -1,0 +1,167 @@
+.a-btn {
+    background: $c-bg-dark;
+    padding: 10px 30px;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: $btn-radius-normal;
+    font-size: $fs-m;
+    color: $c-white;
+    display: inline-block;
+    text-align: center;
+    &:hover {
+        opacity: $c-opacity-full;
+        cursor: pointer;
+        color: $c-white;
+    }
+    &:active {
+        opacity: $c-opacity-full;
+        color: $c-white;
+    }
+    &:focus {
+        opacity: $c-opacity-full;
+        -webkit-transition: box-shadow 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: box-shadow 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+        box-shadow: 0 0 8px $c-second;
+        color: $c-white;
+    }
+    // styleModifiers from here
+    &.a-btn-main {
+        background: $c-second;
+    }
+    &.a-btn-second {
+        background: $c-main;
+    }
+    &.a-btn-block {
+        display: block;
+    }
+    &.a-btn-lg {
+        font-size: $fs-xxl;
+    }
+    &.a-btn-sm {
+        padding: 10px 15px;
+        font-size: $fs-s;
+    }
+    &.a-btn-outline {
+        border: 2px solid $c-bg-dark;
+        background: none;
+        color: $c-bg-dark;
+        &:hover {
+            background: $c-bg-dark;
+            color: $c-white;
+        }
+    }
+    &.a-btn-outline-main {
+        border: 2px solid $c-second;
+        background: none;
+        color: $c-second;
+        &:hover {
+            background: $c-second;
+            color: $c-white;
+        }
+    }
+    &.a-btn-outline-second {
+        border: 2px solid $c-main;
+        background: none;
+        color: $c-main;
+        &:hover {
+            background: $c-main;
+            color: $c-white;
+        }
+    }
+}
+
+.m-languages {
+    height:50px;
+    z-index: 50;
+    .a-btn-languages {
+        color: white;
+        display: inline-block;
+        padding: 2px 5px 5px 5px;
+        height: 24px;
+        width:70px;
+        overflow: hidden;
+        border-radius: 5px;
+        transition: all .3s ease;
+        vertical-align: top;
+        &:hover {
+            //height: 120px;  // this value is set dynamically in snippets/languages.php?
+            margin-bottom: -70px;
+            background: white;
+            li {
+                color: $c-text-main;
+            }
+        }
+        a {
+            color: $c-text-main;
+            text-decoration: none;
+            &:first-child li {
+                border: none;
+            }
+            &:hover {
+                 color: $c-main;
+             }
+        }
+        li {
+            color: $c-text-main;
+            display: block;
+            line-height: 23px;
+            margin-left: 5px;
+            font-weight:lighter;
+
+        }
+        li img {
+            margin: 0 5px 3px 3px;
+            width: 16px;
+            box-shadow: 1px 1px 1px $c-grey;
+        }
+        .language-dropdown {
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+
+
+@include media-breakpoint-up("md") {
+    .m-languages {
+        visibility: visible;
+        .a-btn-languages {
+            margin-left: 210px;
+        }
+    }
+}
+
+@include media-breakpoint-up("lg") {
+    .m-languages {
+        visibility: visible;
+        .a-btn-languages {
+            margin-left: 430px;
+            margin-top:0;
+        }
+    }
+}
+
+@include media-breakpoint-up("xl") {
+    .m-languages {
+        visibility: visible;
+        .a-btn-languages {
+            margin-left: 590px;
+            margin-top:0;
+        }
+    }
+}
+
+@include media-breakpoint-down("sm") {
+    .m-languages {
+        height: 0px;
+        visibility: visible;
+    }
+}
+
+@media (max-width:400px) {
+    .m-languages {
+        .a-btn-languages {
+            margin-top:25px;
+        }
+    }
+}

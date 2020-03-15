@@ -1,0 +1,34 @@
+//@Author: Raffael Pace <mBook>
+//@Date:   2017-24-01T12:15:12+01:00
+//@Email:  raffael.pace@kautionsfrei.de
+//@Last modified by:   mBook
+//@Last modified time: 2017-24-01T12:15:12+01:00
+
+
+a{
+	text-decoration: none;
+	color: $c-link;
+	cursor: pointer;
+	&:hover{
+		color: $c-link-hover;
+	}
+}
+
+.a-link {
+	text-decoration: underline;
+}
+.a-link-grey {
+	color: $c-text-second;
+}
+
+.a-edititem {
+	z-index: 99;
+	position: absolute;
+}
+
+.a-link-footer {
+	color: #d1d0ce;
+	&:hover {
+		color: $c-white;
+	}
+}

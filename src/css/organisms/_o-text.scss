@@ -1,0 +1,34 @@
+/**
+ * An organism to contain phrasing content which includes:
+ *  - paragraphs
+ *  - links
+ *  - buttons
+ *  - lists
+ *
+ * used in these modules:
+ *  - paragraph
+ *  - double-paragraph
+ *  - box-paragraph
+ */
+.o-paragraph {
+
+  .a-heading,
+  .a-btn,
+  .a-paragraph,
+  .m-list {
+    margin-bottom: 16px;
+  }
+
+}
+
+@include media-breakpoint-up("md") {
+
+  .o-paragraph {
+
+    .a-heading,
+    .a-btn,
+    .a-paragraph,
+    .m-list {
+    }
+  }
+}

@@ -1,0 +1,198 @@
+//@Last modified by: Katja Ortz
+//@Last modified time: 2018-03-06
+// new structure of list item classes
+
+ul li, ol li {
+  transition: transform .3s;
+  position: relative;
+  line-height: $lh-huge;
+  margin-left: 30px;
+  font-weight: $fw-light;
+  color: $c-text-main;
+}
+
+.a-listitem {
+  transition: transform .3s;
+  position: relative;
+  line-height: $lh-huge;
+  margin-left: 30px;
+  font-weight: $fw-light;
+  list-style: none;
+  b {
+    color: $c-main;
+  }
+  strong {
+    color: $c-text-main;
+  }
+
+  &.a-listitem-double-right {
+    list-style: none;
+    a {
+      color: $c-text-main;
+      &:hover {
+        color: $c-main;
+      }
+    }
+    &::before {
+      content: "\f324";
+      font-family: "Font Awesome 5 Pro";
+      font-weight: 400;
+      position: absolute;
+      top: 0px;
+      margin-left: -34px;
+      color: $c-main;
+    }
+    &:hover {
+      color: $c-main;
+    }
+    ul {
+      margin-bottom: 15px;
+
+      li {
+        margin-left: 40px;
+        margin-bottom: 5px;
+      }
+    }
+    b {
+      color: $c-main;
+      font-weight: $fw-bold;
+    }
+    strong {
+      color: $c-text-main;
+      font-weight: $fw-bold;
+    }
+  }
+
+  &.a-listitem-check {
+    list-style: none;
+    &::before {
+      content: "\f00c";
+      font-family: "Font Awesome 5 Pro";
+      font-weight: 400;
+      position: absolute;
+      top: 0px;
+      margin-left: -34px;
+      color: $c-main;
+    }
+    b {
+      color: $c-main;
+      font-weight: $fw-bold;
+    }
+    strong {
+      color: $c-text-main;
+      font-weight: $fw-bold;
+    }
+  }
+
+  &.a-listitem-error {
+    list-style: none;
+    margin-left: 20px;
+    color: $c-error;
+    &::before {
+      content: "\f071";
+      font-family: "Font Awesome 5 Pro";
+      font-weight: 400;
+      position: absolute;
+      top: 0px;
+      margin-left: -20px;
+    }
+  }
+
+  &.a-listitem-plus {
+    list-style: none;
+    &::before {
+      content: "\f067";
+      font-family: "Font Awesome 5 Pro";
+      font-weight: 400;
+      position: absolute;
+      top: 0px;
+      margin-left: -34px;
+      color: $c-main;
+    }
+    b {
+      color: $c-main;
+      font-weight: $fw-bold;
+    }
+    strong {
+      color: $c-text-main;
+      font-weight: $fw-bold;
+    }
+  }
+
+  &.a-listitem-minus {
+    list-style: none;
+    &::before {
+      content: "\f068";
+      font-family: "Font Awesome 5 Pro";
+      font-weight: 400;
+      position: absolute;
+      top: 0px;
+      margin-left: -34px;
+      color: $c-main;
+    }
+  }
+
+  &.a-listitem-disc {
+    list-style: disc;
+  }
+
+  &.a-listitem-number {
+    list-style: decimal;
+  }
+
+  &.a-listitem-circle {
+    list-style: circle;
+  }
+
+  &.a-listitem-alpha {
+    list-style: lower-alpha;
+  }
+
+  &.a-listitem-roman {
+    list-style: upper-roman;
+  }
+
+  &.a-listitem-square {
+    list-style: square;
+  }
+  &.a-listitem-footer {
+    margin: 8px 0;
+    list-style: decimal;
+    line-height: $lh-normal;
+    color: #ccc;
+    a {
+      color: #d1d0ce;
+      &:hover {
+        color: $c-bg-light;
+      }
+    }
+  }
+  &.a-listitem-disadvantage {
+    list-style: none;
+    padding-bottom: 15px;
+    &::before {
+      content: "\f057";
+      font-family: "Font Awesome 5 Pro";
+      font-weight: 600;
+      font-size: $fs-l;
+      position: absolute;
+      top: 0px;
+      margin-left: -34px;
+      color: $c-main-dark;
+    }
+  }
+  &.a-listitem-advantage {
+    list-style: none;
+    padding-bottom: 15px;
+    &::before {
+      content: "\f058";
+      font-family: "Font Awesome 5 Pro";
+      font-weight: 600;
+      font-size: $fs-l;
+      position: absolute;
+      top: 0px;
+      margin-left: -34px;
+      color: $c-main;
+    }
+  }
+}

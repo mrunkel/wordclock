@@ -1,0 +1,29 @@
+.m-input {}
+
+.m-input-select{
+    max-width: 100%;
+    word-wrap: break-word;
+    display: inline-block;
+}
+.m-input-slider-deposit {
+    & > .a-input-slider {
+        margin-top: 60px; // used to take distance for the slider!
+    }
+    .a-input-slider-drag {
+        // [option] the sliders' drag wrapps a a-label-slider
+        // to show the result directly with the slider!
+        & > .a-label-slider {
+            position: absolute; // pos label above the drag
+            left: -47px;
+            top: -70px;
+            cursor: pointer;
+        }
+    }
+}
+
+.m-input-selection {
+    height: 50px;
+    width: 80%;
+    font-size: 20px;
+    color: $c-text-main;
+}

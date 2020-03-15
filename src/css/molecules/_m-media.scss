@@ -1,0 +1,54 @@
+//@Author: Raffael Pace <mBook>
+//@Date:   2017-26-01T12:09:07+01:00
+//@Email:  raffael.pace@kautionsfrei.de
+//@Last modified by:   mBook
+//@Last modified time: 2017-26-01T12:09:07+01:00
+
+.m-calc-img {
+  background: url(#{$url-img}img-calculator.png);
+  background-repeat: no-repeat;
+  height: 67px;
+  background-size: 350px 108px;
+  background-position: 0px;
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 70px;
+  &.show-more {
+    background-position: -97px;
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 89px;
+  }
+  &.show-all {
+    background-size: 350px 108px;
+    background-position: -199px;
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 149px;
+  }
+}
+
+.m-stage-image {
+  position: relative;
+  top: 32px;
+  margin-top: -32px;
+}
+
+.m-box-awards {
+  .m-awards {
+    .a-media {
+      max-height: 100px;
+    }
+  }
+}
+
+@include media-breakpoint-down("sm") {
+  .m-box-contact {
+    img {
+      max-width: 150px;
+      margin: 0 auto;
+      display: list-item;
+    }
+  }
+}
+

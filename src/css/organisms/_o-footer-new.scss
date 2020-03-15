@@ -1,0 +1,132 @@
+.o-footer-new {
+  background: $c-footer-bg;
+  padding: 30px 0;
+
+  // I'm no CSS expert, but I'm pretty sure none of these m- and a- classes belong in this file.
+  // Wouldn't it be better to have them in their proper level? ie, m- classes in molecules?
+  .m-brands-img {
+    background-color: $c-footer-bg;
+    border-bottom: 1px solid #d1d0ce;
+    padding-bottom: 40px;
+    margin-bottom: 30px;
+    .a-paragraph {
+      color: #d1d0ce;
+      margin-bottom: 10px;
+      font-weight: 300;
+    }
+  }
+  .a-header-footer {
+    font-weight: 300;
+  }
+  .m-list-footer {
+    .a-listitem-footer {
+      font-weight: 300;
+      a {
+        font-weight: 300;
+      }
+    }
+  }
+  .a-text-footer {
+    font-weight: 300;
+    a {
+      font-weight: 300;
+    }
+  }
+
+  .m-footer-top {
+    margin-bottom: 30px;
+
+    img {
+      max-width: 160px;
+    }
+
+  }
+
+  .m-footer-middle {
+    padding-bottom: 20px;
+    p {
+      font-size: $fs-s;
+      color: #d1d0ce;
+      font-weight: 400;
+      margin-bottom: 15px;
+    }
+    a {
+      color: #d1d0ce;
+      font-size: $fs-s;
+    }
+    span {
+      color: #d1d0ce;
+    }
+  }
+
+  .m-footer-bottom {
+    border-top: 1px solid #d1d0ce;
+    padding-top: 40px;
+    .m-footer {
+      margin-top: 10px;
+      font-weight: 300;
+      span {
+        color: #d1d0ce;
+        font-weight: 300;
+      }
+      a {
+        color: #d1d0ce;
+        font-weight: 300;
+        padding: 5px;
+        &:hover {
+          color: $c-bg-light;
+        }
+      }
+      .a-hotline {
+        color: $c-white;
+        font-weight: 600;
+        a {
+          color: $c-white;
+          font-weight: 600;
+        }
+      }
+    }
+    .m-footer-socials {
+      .m-social-medias {
+        i {
+          font-size: 1.3em;
+          color: $c-bg-light;
+          opacity: 0.6;
+          margin: 0;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down ("sm") {
+  .o-footer-new {
+    .m-brands-img {
+      display: block !important;
+      .a-brand-element {
+        height: 25px;
+        margin: 10px 30px;
+      }
+    }
+  }
+  .o-footer-op {
+    .m-brands-img {
+      display: block !important;
+      .a-brand-element {
+        height: 25px;
+        margin: 10px 30px;
+      }
+    }
+  }
+}
+
+//AAK Landingpage
+
+.o-footer-aak {
+  .m-footer-bottom {
+    padding-top: 5px;
+  }
+}

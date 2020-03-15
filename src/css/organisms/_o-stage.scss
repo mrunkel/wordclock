@@ -1,0 +1,194 @@
+// style stage full width image with layered box
+
+.o-banner-image {
+    background-repeat: no-repeat;
+    height: 450px;
+    max-width: 1140px;
+    display: block;
+    margin: -13px auto;
+    position: relative;
+
+    .m-banner-image {
+        .a-banner-image {
+            position: absolute;
+            left: -3%;
+            min-height: 450px;
+            width: 100%;
+        }
+    }
+
+    .m-layer {
+        background: rgba($c-white, 0.8);
+        max-width: 400px;
+        float: right;
+        margin-top: 65px;
+        padding: 20px;
+        @include box-shadow(0, 0px, 7px, -1px rgba(48, 48, 48, 0.3));
+
+        .a-heading {
+            text-align: center;
+        }
+
+        .a-paragraph {
+            text-align: center;
+            color: $c-text-main;
+            font-size: 1.1em;
+            font-weight: 300;
+
+            a {
+                color: $c-text-main;
+                font-weight: $fw-light;
+                text-decoration: underline;
+                font-size: .9em;
+            }
+        }
+
+        .a-btn {
+            margin: 20px 0;
+            font-weight: $fw-light;
+        }
+    }
+}
+
+.o-banner-img-calc {
+    .o-section-grey {
+        margin-top: 13px;
+
+        .o-calc-section {
+            .m-box-inner {
+                margin-top: -80px;
+            }
+        }
+    }
+}
+
+
+@include media-breakpoint-down("md") {
+    .o-banner-img-calc {
+        .o-section-grey {
+            .o-calc-section {
+                .m-box-inner {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down("md") {
+    .o-banner-image {
+        height: 300px;
+        background-position: center;
+
+        .m-banner-image {
+            .a-banner-image {
+                min-height: 300px;
+                left: unset;
+                width: 95%;
+            }
+        }
+
+        .m-layer {
+            max-width: 355px;
+            margin-top: 30px;
+            background: rgba($c-white, 0.9);
+
+            .a-paragraph {
+                font-size: $fs-m;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down("sm") {
+    .o-banner-image {
+        background-repeat: no-repeat;
+        background-position: 33% 20%;
+        height: 300px;
+
+        .container {
+            padding-top: 20px;
+        }
+
+        .m-banner-image {
+            .a-banner-image {
+                display: none;
+            }
+        }
+
+        .m-layer {
+            float: unset;
+            margin-top: 0;
+            display: block;
+            margin: 0 auto;
+            background: rgba($c-white, 0.9);
+        }
+    }
+}
+
+@media (max-width: 364px) {
+    .o-banner-image {
+        .m-layer {
+            .a-heading {
+                font-size: 1.45em;
+            }
+        }
+    }
+}
+
+
+// AAK Landingpage
+
+.o-main-aak {
+    .o-banner-image {
+        background-image: url('/images/system/background-image.png');
+        background-color: #fcf8e3;
+        background-repeat: no-repeat;
+        background-size: cover;
+        max-width: none;
+        display: block;
+        position: relative;
+
+        .m-banner-content {
+            margin-top: 20%;
+        }
+    }
+}
+
+
+@include media-breakpoint-down("md") {
+    .o-main-aak {
+        .o-banner-image {
+            background-image: none;
+            background-color: #666666;
+            height: 300px;
+
+            .m-banner-content {
+                margin-top: 20%;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down("sm") {
+    .o-main-aak {
+        .o-banner-image {
+            background-image: none;
+            background-color: #666666;
+            height: 300px;
+
+            .m-banner-content {
+                margin-top: 15%;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1440px) {
+    .o-main-aak {
+        .o-banner-image {
+            background-size: unset;
+            background-position: 40%;
+        }
+    }
+}
