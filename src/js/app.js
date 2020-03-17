@@ -27,7 +27,7 @@ function zuText(value) {
   // given a number between 0 and 59, return the appropriate word.
 
   var digits = [
-    'null', 'eins', 'zwei', 'drei', 'vier',
+    'null', 'ein', 'zwei', 'drei', 'vier',
     'fünf', 'sechs', 'sieben', 'acht', 'neun'];
   var tens =
       [
@@ -44,7 +44,7 @@ function zuText(value) {
   }
   tensValue = ((value - value % 10) / 10) - 2;
   unitsValue = (value % 10);
-  return (unitsValue === 0) ? larger[tensValue] : digits[unitsValue] + ' und ' +
+  return (unitsValue === 0) ? larger[tensValue] : digits[unitsValue] + 'und' +
       larger[tensValue];
 }
 
@@ -110,10 +110,18 @@ function formatTimeGermany(UTC) {
   }
 
   if (minute < 10) {
-    return 'Es ist ' + zuText(minute) + ' nach ' + zuText(hour) + ' Uhr';
+    let minuteWord = zuText(minute);
+    if (minute === 1) {
+      minuteWord = 'eine'
+    }
+    return 'Es ist ' + minuteWord + ' nach ' + zuText(hour) + ' Uhr';
   }
 
   if (minute > 50) {
+    let minuteWord = zuText(60 - minute);
+    if (minute === 59) {
+      minuteWord = 'eine'
+    }
     return 'Es ist ' + zuText(60 - minute) + ' vor ' + zuText(toHour) + ' Uhr';
   }
 
