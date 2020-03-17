@@ -1,3 +1,5 @@
+let swap = false;
+
 function toWords(value) {
   // given a number between 0 and 59, return the appropriate word.
 
@@ -48,9 +50,9 @@ function zuText(value) {
       larger[tensValue];
 }
 
-function formatTimeUS(UTC) {
-  const us = UTC.clone().tz('America/Los_Angeles');
-  let hour = us.hours();
+function formatTimeInEnglish(time) {
+
+  let hour = time.hours();
   let pm = ' a.m.';
   if (hour > 12) {
     hour -= 12;
@@ -63,7 +65,7 @@ function formatTimeUS(UTC) {
     toPM = ' p.m.';
   }
 
-  let minute = us.minutes();
+  let minute = time.minutes();
 
   if (minute === 0) {
     return 'It is ' + toWords(hour) + pm;
@@ -89,10 +91,10 @@ function formatTimeUS(UTC) {
 
 }
 
-function formatTimeGermany(UTC) {
-  const germany = UTC.clone().tz('Europe/Berlin');
-  const hour = germany.hours();
-  const minute = germany.minutes();
+function formatTimeInGerman(time) {
+
+  const hour = time.hours();
+  const minute = time.minutes();
   let toHour = hour + 1;
   if (toHour > 23) {
     toHour = 0;
@@ -122,7 +124,7 @@ function formatTimeGermany(UTC) {
     if (minute === 59) {
       minuteWord = 'eine'
     }
-    return 'Es ist ' + zuText(60 - minute) + ' Minuten vor ' + zuText(toHour) + ' Uhr';
+    return 'Es ist ' + minuteWord + ' Minuten vor ' + zuText(toHour) + ' Uhr';
   }
 
   return 'Es ist ' + zuText(hour) + ' Uhr ' + zuText(minute);
@@ -134,11 +136,25 @@ function updateClock() {
   const germanClock = document.getElementById('clock-german');
   const UTC = new moment();
 
-  usClock.innerText = formatTimeUS(UTC) + ' in California';
-  germanClock.innerText = formatTimeGermany(UTC) + ' in Deutschland';
+  const timeInGermany = UTC.clone().tz('Europe/Berlin');
+  const timeInUSA = UTC.clone().tz('America/Los_Angeles');
+  let germanyTime = formatTimeInGerman(timeInGermany) + ' in Deutschland';
+  let californiaTime = formatTimeInEnglish(timeInUSA) + ' in California';
+  if (swap) {
+    californiaTime = formatTimeInGerman(timeInUSA) + ' in Kalifornien';
+    germanyTime = formatTimeInEnglish(timeInGermany) + ' in Germany';
+  }
+  usClock.innerText = californiaTime;
+  germanClock.innerText = germanyTime;
+}
+
+function swapText() {
+  swap = ! swap;
+  updateClock();
 }
 
 function initClock() {
+  document.getElementById('swap').addEventListener("click", swapText);
   updateClock();
   setInterval(updateClock, 60000);
 }
