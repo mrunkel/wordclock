@@ -84,7 +84,7 @@ function formatTimeInEnglish(time) {
   }
 
   if (minute > 50) {
-    return 'It is ' + toWords(60 - minute) + 'minutes before ' + toWords(toHour) + toPM;
+    return 'It is ' + toWords(60 - minute) + ' minutes before ' + toWords(toHour) + toPM;
   }
 
   return 'It is ' + toWords(hour) + ' ' + toWords(minute) + pm;
