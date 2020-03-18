@@ -80,11 +80,20 @@ function formatTimeInEnglish(time) {
   }
 
   if (minute < 10) {
-    return 'It is ' + toWords(minute) + ' minutes after ' + toWords(hour) + pm;
+    let minuteWord = toWords(minute) + ' minutes';
+    if (minute === 1) {
+      minuteWord = 'one minute'
+    }
+    return 'It is ' + toWords(minute) + ' after ' + toWords(hour) + pm;
   }
 
   if (minute > 50) {
-    return 'It is ' + toWords(60 - minute) + ' minutes before ' + toWords(toHour) + toPM;
+    let minuteWord = toWords(60 - minute) + ' minutes';
+    if (minute === 59) {
+      minuteWord = 'one minute'
+    }
+
+    return 'It is ' + minuteWord + ' before ' + toWords(toHour) + toPM;
   }
 
   return 'It is ' + toWords(hour) + ' ' + toWords(minute) + pm;
@@ -112,19 +121,19 @@ function formatTimeInGerman(time) {
   }
 
   if (minute < 10) {
-    let minuteWord = zuText(minute);
+    let minuteWord = zuText(minute) + " Minuten";
     if (minute === 1) {
-      minuteWord = 'eine'
+      minuteWord = 'eine Minute'
     }
-    return 'Es ist ' + minuteWord + ' Minuten nach ' + zuText(hour) + ' Uhr';
+    return 'Es ist ' + minuteWord + ' nach ' + zuText(hour) + ' Uhr';
   }
 
   if (minute > 50) {
-    let minuteWord = zuText(60 - minute);
+    let minuteWord = zuText(60 - minute) + ' Minuten';
     if (minute === 59) {
-      minuteWord = 'eine'
+      minuteWord = 'eine Minute'
     }
-    return 'Es ist ' + minuteWord + ' Minuten vor ' + zuText(toHour) + ' Uhr';
+    return 'Es ist ' + minuteWord + ' vor ' + zuText(toHour) + ' Uhr';
   }
 
   return 'Es ist ' + zuText(hour) + ' Uhr ' + zuText(minute);
