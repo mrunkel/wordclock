@@ -1,18 +1,28 @@
 let swap = false;
 
-function toWords(value) {
+function toWords(value, language = 'en') {
   // given a number between 0 and 59, return the appropriate word.
 
-  var digits = [
+  let digits = [
     'zero', 'one', 'two', 'three', 'four',
     'five', 'six', 'seven', 'eight', 'nine'];
-  var tens =
-      [
-        'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen',
-        'seventeen', 'eighteen', 'nineteen',
-      ];
-  var larger = ['twenty', 'thirty', 'forty', 'fifty'];
+  let tens = [
+    'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen',
+    'seventeen', 'eighteen', 'nineteen',
+  ];
+  let larger = ['twenty', 'thirty', 'forty', 'fifty'];
 
+  if (language === 'de') {
+    digits = [
+      'null', 'ein', 'zwei', 'drei', 'vier',
+      'fünf', 'sechs', 'sieben', 'acht', 'neun'];
+    tens =
+        [
+          'zehn', 'elf', 'zwölf', 'dreizehn', 'vierzehn', 'fünfzehn', 'sechszehn',
+          'siebszehn', 'achtzehn', 'neunzehn',
+        ];
+    larger = ['zwanzig', 'dreizig', 'vierzig', 'fünfzehn'];
+  }
   if (value <= 9) {
     return digits[value];
   }
@@ -21,33 +31,12 @@ function toWords(value) {
   }
   tensValue = ((value - value % 10) / 10) - 2;
   unitsValue = (value % 10);
-  return (unitsValue === 0) ? larger[tensValue] : larger[tensValue] + ' ' +
-      digits[unitsValue];
-}
 
-function zuText(value) {
-  // given a number between 0 and 59, return the appropriate word.
-
-  var digits = [
-    'null', 'ein', 'zwei', 'drei', 'vier',
-    'fünf', 'sechs', 'sieben', 'acht', 'neun'];
-  var tens =
-      [
-        'zehn', 'elf', 'zwölf', 'dreizehn', 'vierzehn', 'fünfzehn', 'sechszehn',
-        'siebszehn', 'achtzehn', 'neunzehn',
-      ];
-  var larger = ['zwanzig', 'dreizig', 'vierzig', 'fünfzehn'];
-
-  if (value <= 9) {
-    return digits[value];
+  let bigText = larger[tensValue] + ' ' + digits[unitsValue];
+  if (language === 'de') {
+    bigText = digits[unitsValue] + 'und' + larger[tensValue];
   }
-  if (value > 9 && value < 20) {
-    return tens[value - 10];
-  }
-  tensValue = ((value - value % 10) / 10) - 2;
-  unitsValue = (value % 10);
-  return (unitsValue === 0) ? larger[tensValue] : digits[unitsValue] + 'und' +
-      larger[tensValue];
+  return (unitsValue === 0) ? larger[tensValue] : bigText;
 }
 
 function formatTimeInEnglish(time) {
@@ -82,7 +71,7 @@ function formatTimeInEnglish(time) {
   if (minute < 10) {
     let minuteWord = toWords(minute) + ' minutes';
     if (minute === 1) {
-      minuteWord = 'one minute'
+      minuteWord = 'one minute';
     }
     return 'It is ' + toWords(minute) + ' after ' + toWords(hour) + pm;
   }
@@ -90,7 +79,7 @@ function formatTimeInEnglish(time) {
   if (minute > 50) {
     let minuteWord = toWords(60 - minute) + ' minutes';
     if (minute === 59) {
-      minuteWord = 'one minute'
+      minuteWord = 'one minute';
     }
 
     return 'It is ' + minuteWord + ' before ' + toWords(toHour) + toPM;
@@ -109,34 +98,35 @@ function formatTimeInGerman(time) {
     toHour = 0;
   }
   if (minute === 0) {
-    return 'Es ist ' + zuText(hour) + ' Uhr';
+    return 'Es ist ' + toWords(hour, 'de') + ' Uhr';
   }
 
   if (minute === 15) {
-    return 'Es ist virtel nach ' + zuText(hour) + ' Uhr';
+    return 'Es ist viertel nach ' + toWords(hour, 'de') + ' Uhr';
   }
 
   if (minute === 45) {
-    return 'Es ist virtel vor ' + zuText(toHour) + ' Uhr';
+    return 'Es ist viertel vor ' + toWords(toHour, 'de') + ' Uhr';
   }
 
   if (minute < 10) {
-    let minuteWord = zuText(minute) + " Minuten";
+    let minuteWord = toWords(minute, 'de') + ' Minuten';
     if (minute === 1) {
-      minuteWord = 'eine Minute'
+      minuteWord = 'eine Minute';
     }
-    return 'Es ist ' + minuteWord + ' nach ' + zuText(hour) + ' Uhr';
+    return 'Es ist ' + minuteWord + ' nach ' + toWords(hour, 'de') +
+        ' Uhr';
   }
 
   if (minute > 50) {
-    let minuteWord = zuText(60 - minute) + ' Minuten';
+    let minuteWord = toWords(60 - minute, 'de') + ' Minuten';
     if (minute === 59) {
-      minuteWord = 'eine Minute'
+      minuteWord = 'eine Minute';
     }
-    return 'Es ist ' + minuteWord + ' vor ' + zuText(toHour) + ' Uhr';
+    return 'Es ist ' + minuteWord + ' vor ' + toWords(toHour,'de') + ' Uhr';
   }
 
-  return 'Es ist ' + zuText(hour) + ' Uhr ' + zuText(minute);
+  return 'Es ist ' + toWords(hour,'de') + ' Uhr ' + toWords(minute, 'de');
 
 }
 
@@ -158,12 +148,12 @@ function updateClock() {
 }
 
 function swapText() {
-  swap = ! swap;
+  swap = !swap;
   updateClock();
 }
 
 function initClock() {
-  document.getElementById('swap').addEventListener("click", swapText);
+  document.getElementById('swap').addEventListener('click', swapText);
   updateClock();
   setInterval(updateClock, 60000);
 }
