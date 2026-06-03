@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>Word Clock</title>
+  <link href="/assets/css/main.css" rel="stylesheet">
+</head>
+<body class="flex min-h-screen flex-col">
+  <header class="py-10 md:py-14">
+    <div class="page-wrap text-center">
+      <h1 class="font-display text-3xl tracking-tight text-ink md:text-4xl">Word Clock</h1>
+      <p class="mt-2 text-sm text-muted">California &amp; Germany, in words</p>
+
+      <div class="mt-8" aria-label="Local time">
+        <div id="flip-clock" class="flip-clock"></div>
+        <p id="flip-clock-live" class="sr-only" aria-live="polite"></p>
+        <p id="flip-clock-label" class="mt-3 text-xs uppercase tracking-[0.2em] text-muted"></p>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex flex-1 flex-col">
+    <section class="page-wrap pb-16 md:pb-24" aria-live="polite">
+      <div class="rounded-2xl border border-border bg-surface px-6 py-10 shadow-sm md:px-10 md:py-12">
+        <div class="space-y-10">
+          <div>
+            <p id="clock-us-label" class="clock-label">California</p>
+            <p id="clock-us" class="clock-text mt-3">It's five minutes before two.</p>
+          </div>
+
+          <div class="flex justify-center">
+            <button
+              id="swap"
+              type="button"
+              aria-label="Swap languages between time zones"
+              class="group inline-flex items-center gap-2 rounded-full border border-border bg-stone-50 px-4 py-2 text-sm text-muted transition hover:border-stone-300 hover:bg-white hover:text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-stone-400 focus-visible:ring-offset-2"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="size-4 transition group-hover:rotate-180" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+              </svg>
+              Swap languages
+            </button>
+          </div>
+
+          <div>
+            <p id="clock-de-label" class="clock-label">Deutschland</p>
+            <p id="clock-german" class="clock-text mt-3">Es ist fünf Minuten vor zwei.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="mt-auto border-t border-border bg-surface py-12 md:py-14">
+      <div class="page-wrap">
+        <h2 class="font-display text-lg text-ink md:text-xl">About</h2>
+        <p class="mt-4 max-w-prose text-base leading-relaxed text-muted">
+          I built this page because my wife said she really liked a similar clock on the wall of a coffee shop near
+          us and I thought it would be a good way to learn about JavaScript string handling and time zones.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-border py-8">
+    <div class="page-wrap flex flex-col items-center gap-3 text-center text-sm text-muted">
+      <p>Developed with ❤️ by Marc Runkel</p>
+      <nav class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1" aria-label="Footer">
+        <a href="https://runkel.org/" class="link-muted">runkel.org</a>
+        <span aria-hidden="true" class="text-stone-300">·</span>
+        <a href="/impressum" class="link-muted">Impressum</a>
+        <span aria-hidden="true" class="text-stone-300">·</span>
+        <a href="/datenschutz" class="link-muted">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script>initClock();</script>
+</body>
+</html>

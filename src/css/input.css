@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-flip: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --color-ink: oklch(0.22 0.01 75);
+  --color-muted: oklch(0.52 0.01 75);
+  --color-surface: oklch(0.985 0.004 85);
+  --color-border: oklch(0.91 0.006 85);
+  --color-flip: oklch(0.18 0.01 75);
+  --color-flip-edge: oklch(0.12 0.01 75);
+}
+
+@layer base {
+  body {
+    @apply min-h-screen bg-stone-100 text-ink antialiased;
+  }
+}
+
+@layer components {
+  .page-wrap {
+    @apply mx-auto w-full max-w-2xl px-6;
+  }
+
+  .link-muted {
+    @apply text-muted underline decoration-stone-300 underline-offset-4 transition hover:text-ink hover:decoration-stone-400;
+  }
+
+  .clock-label {
+    @apply text-xs font-medium uppercase tracking-[0.2em] text-muted;
+  }
+
+  .clock-text {
+    @apply font-display text-2xl leading-snug text-ink md:text-3xl lg:text-[2rem] lg:leading-tight;
+  }
+
+  .flip-clock {
+    @apply flex items-center justify-center gap-1.5 md:gap-2;
+  }
+
+  .flip-colon {
+    @apply px-0.5 font-flip text-3xl font-semibold leading-none text-flip md:text-4xl;
+  }
+
+  .flip-period {
+    @apply ml-1 self-end pb-1 font-flip text-xs font-semibold uppercase tracking-wider text-muted md:text-sm;
+  }
+
+  .flip-digit {
+    position: relative;
+    width: 2.75rem;
+    height: 3.75rem;
+    perspective: 16rem;
+    transform-style: preserve-3d;
+    font-family: var(--font-flip);
+    font-size: 2.25rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+  }
+
+  @media (min-width: 768px) {
+    .flip-digit {
+      width: 3.25rem;
+      height: 4.5rem;
+      font-size: 2.75rem;
+    }
+  }
+
+  .flip-digit-top,
+  .flip-digit-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    background: var(--color-flip);
+    color: #fafaf9;
+  }
+
+  .flip-digit-top {
+    top: 0;
+    border-radius: 0.375rem 0.375rem 0 0;
+    border-bottom: 1px solid var(--color-flip-edge);
+  }
+
+  .flip-digit-bottom {
+    bottom: 0;
+    border-radius: 0 0 0.375rem 0.375rem;
+  }
+
+  .flip-digit-top span,
+  .flip-digit-bottom span {
+    position: absolute;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 200%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .flip-digit-top span {
+    top: 0;
+  }
+
+  .flip-digit-bottom span {
+    bottom: 0;
+  }
+
+  .flip-digit-flip {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    background: var(--color-flip);
+    color: #fafaf9;
+    visibility: hidden;
+    z-index: 2;
+  }
+
+  .flip-digit-flip span {
+    position: absolute;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 200%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .flip-digit-flip-top {
+    top: 0;
+    border-radius: 0.375rem 0.375rem 0 0;
+    border-bottom: 1px solid var(--color-flip-edge);
+    transform-origin: bottom center;
+  }
+
+  .flip-digit-flip-top span {
+    top: 0;
+  }
+
+  .flip-digit-flip-bottom {
+    bottom: 0;
+    border-radius: 0 0 0.375rem 0.375rem;
+    transform-origin: top center;
+    transform: rotateX(90deg);
+  }
+
+  .flip-digit-flip-bottom span {
+    bottom: 0;
+  }
+
+  .flip-digit.is-flipping .flip-digit-flip {
+    visibility: visible;
+  }
+
+  .flip-digit.is-flipping .flip-digit-flip-top {
+    animation: flip-top 0.55s ease-in forwards;
+  }
+
+  .flip-digit.is-flipping .flip-digit-flip-bottom {
+    animation: flip-bottom 0.55s ease-out 0.55s forwards;
+  }
+
+  @keyframes flip-top {
+    to {
+      transform: rotateX(-90deg);
+    }
+  }
+
+  @keyframes flip-bottom {
+    to {
+      transform: rotateX(0deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .flip-digit.is-flipping .flip-digit-flip-top,
+    .flip-digit.is-flipping .flip-digit-flip-bottom {
+      animation: none;
+    }
+  }
+}
